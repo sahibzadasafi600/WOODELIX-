@@ -1,0 +1,1845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WOODELIX — Premium Handcrafted Furniture</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+</head>
+<body>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:rgba(0,0,0,0.06)}
+svg,svg *{pointer-events:none!important}
+img{pointer-events:none;display:block}
+a,button,input,select,textarea{touch-action:manipulation}
+[onclick],[role="button"],
+.pcard,.cat-chip,.btn-primary,.btn-ghost,.btn-gold,.btn-lg,.icon-btn,
+.mob-nav-item,.back-row,.tab,.footer-link,.section-link,.inspo-card,
+.career-card,.pwish,.add-btn,.wish-btn,.sz,.sw,.cdot,.sb-opt,.finish-opt,
+.wood-opt,.cpick,.dthumb,.logo,.soc-btn,.nav-item,.sort-sel,.mob-close,
+.mob-menu-btn,.mat-card,.testi-card,.hiw-step,.promise-item,.sr-card,
+.custom-banner,.btn-gold,.announce span,.room-card{
+  touch-action:manipulation;-webkit-user-select:none;user-select:none;cursor:pointer;
+}
+:root{
+  --cream:#F8F5F0;--warm:#EDE7DC;--stone:#C8BAA8;--text:#1C1C1A;--muted:#6E6B63;
+  --hint:#ADA89F;--border:#E4DDD4;--accent:#2E2E2B;--green-bg:#EBF4DF;--green-text:#285710;
+  --red-bg:#FDEDED;--red-text:#7A2020;--gold:#B8922A;--gold-bg:#FBF6E8;
+  --font-serif:'Cormorant Garamond',Georgia,serif;
+  --font-sans:'DM Sans',sans-serif;
+  --radius:14px;--shadow:0 2px 16px rgba(28,28,26,.07);--shadow-lg:0 8px 40px rgba(28,28,26,.12);
+}
+body{font-family:var(--font-sans);background:var(--cream);color:var(--text);font-size:13px;line-height:1.5}
+.site{max-width:1280px;margin:0 auto;border:0.5px solid var(--border);border-top:none;border-bottom:none;min-height:100vh}
+
+/* ── NAV ── */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:0 28px;height:60px;background:rgba(248,245,240,.97);border-bottom:0.5px solid var(--border);backdrop-filter:blur(10px);position:sticky;top:0;z-index:100}
+.logo{font-family:var(--font-serif);font-size:22px;font-weight:600;letter-spacing:.04em;color:var(--text);cursor:pointer}
+.nav-center{display:flex;gap:2px}
+.nav-item{font-size:12px;color:var(--muted);cursor:pointer;padding:7px 12px;border-radius:8px;letter-spacing:.01em;transition:all .2s;font-weight:400}
+.nav-item:hover{color:var(--text);background:var(--warm)}
+.nav-item.active{color:var(--text);font-weight:500}
+.nav-right{display:flex;align-items:center;gap:4px}
+.icon-btn{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:9px;cursor:pointer;color:var(--muted);font-size:18px;transition:all .2s}
+.icon-btn:hover{background:var(--warm);color:var(--text)}
+.cart-dot{position:relative}
+.cart-dot::after{content:'2';position:absolute;top:4px;right:4px;width:14px;height:14px;background:var(--text);color:var(--cream);font-size:8px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;line-height:14px;text-align:center}
+
+/* ── ANNOUNCE ── */
+.announce{background:var(--text);color:var(--cream);text-align:center;padding:10px;font-size:11px;letter-spacing:.05em;font-weight:300}
+.announce span{opacity:.55;margin:0 10px}
+
+/* ── PAGES ── */
+.page{display:none;background:var(--cream);min-height:500px}
+.page.active{display:block}
+
+/* ── HERO ── */
+.hero{display:grid;grid-template-columns:1fr 1.1fr;min-height:500px}
+.hero-left{padding:64px 48px;display:flex;flex-direction:column;justify-content:center;gap:20px;background:var(--cream)}
+.hero-eyebrow{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--hint);font-weight:400}
+.hero-h1{font-size:56px;font-weight:500;line-height:1.08;color:var(--text);font-family:var(--font-serif)}
+.hero-h1 em{font-style:italic;color:var(--gold)}
+.hero-p{font-size:13px;color:var(--muted);line-height:1.8;max-width:320px;font-weight:300}
+.hero-actions{display:flex;gap:10px;margin-top:8px}
+.btn-primary{font-size:12px;padding:11px 24px;background:var(--text);color:var(--cream);border-radius:9px;cursor:pointer;letter-spacing:.04em;transition:opacity .2s;border:none;font-family:var(--font-sans);font-weight:500;display:inline-block}
+.btn-primary:hover{opacity:.82}
+.btn-ghost{font-size:12px;padding:11px 22px;border:0.5px solid var(--stone);border-radius:9px;cursor:pointer;color:var(--muted);background:transparent;transition:all .2s;font-family:var(--font-sans)}
+.btn-ghost:hover{border-color:var(--text);color:var(--text)}
+.hero-right{position:relative;overflow:hidden;background:#1C1C1A}
+.hero-right img{width:100%;height:100%;object-fit:cover;opacity:.88}
+.hero-tag-float{position:absolute;bottom:24px;left:24px;background:rgba(248,245,240,.95);border:0.5px solid var(--border);border-radius:12px;padding:12px 16px;backdrop-filter:blur(8px)}
+.hero-tag-label{font-size:9px;color:var(--hint);letter-spacing:.1em;text-transform:uppercase}
+.hero-tag-val{font-size:13px;font-weight:500;color:var(--text);margin-top:3px;font-family:var(--font-serif)}
+.hero-badge{position:absolute;top:24px;right:24px;background:var(--gold);color:#fff;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:50px;font-weight:500}
+
+/* ── STATS RIBBON ── */
+.stats-ribbon{display:grid;grid-template-columns:repeat(4,1fr);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);background:#fff}
+.ribbon-stat{padding:22px 20px;border-right:0.5px solid var(--border);text-align:center}
+.ribbon-stat:last-child{border-right:none}
+.ribbon-num{font-size:28px;font-weight:500;color:var(--text);font-family:var(--font-serif);line-height:1}
+.ribbon-lbl{font-size:10px;color:var(--hint);margin-top:4px;letter-spacing:.04em}
+
+/* ── CATEGORY SCROLL ── */
+.cat-row{display:flex;gap:8px;padding:20px 24px;overflow-x:auto;border-bottom:0.5px solid var(--border);scrollbar-width:none;background:#fff}
+.cat-row::-webkit-scrollbar{display:none}
+.cat-chip{display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;min-width:68px;padding:10px 12px;border-radius:12px;transition:background .2s;flex-shrink:0}
+.cat-chip:hover{background:var(--warm)}
+.cat-chip.active{background:var(--text)}
+.cat-icon{width:36px;height:36px;background:var(--warm);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px;color:var(--muted);transition:all .2s;overflow:hidden}
+.cat-icon img{width:100%;height:100%;object-fit:cover;border-radius:10px}
+.cat-chip.active .cat-icon{background:rgba(255,255,255,.15);color:var(--cream)}
+.cat-label{font-size:9px;color:var(--muted);letter-spacing:.04em;white-space:nowrap;transition:color .2s}
+.cat-chip.active .cat-label{color:var(--cream)}
+
+/* ── PRODUCT GRID ── */
+.prod-section{padding:0 20px 24px}
+.section-row{display:flex;align-items:center;justify-content:space-between;padding:24px 4px 14px}
+.section-h{font-size:22px;font-weight:500;color:var(--text);font-family:var(--font-serif)}
+.section-link{font-size:11px;color:var(--hint);cursor:pointer;transition:color .2s}
+.section-link:hover{color:var(--text)}
+.pgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.pgrid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.pgrid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pgrid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.pcard{background:#fff;border-radius:var(--radius);overflow:hidden;cursor:pointer;border:0.5px solid var(--border);transition:all .28s;box-shadow:var(--shadow)}
+.pcard:hover{border-color:var(--stone);transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.pthumb{width:100%;aspect-ratio:1;background:var(--warm);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.pthumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.pcard:hover .pthumb img{transform:scale(1.04)}
+.pthumb-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+.pthumb-inner svg{width:70%;height:70%}
+.pbadge{position:absolute;top:10px;left:10px;font-size:9px;padding:4px 9px;border-radius:6px;font-weight:500;z-index:1;letter-spacing:.02em}
+.pbadge-new{background:var(--green-bg);color:var(--green-text)}
+.pbadge-sale{background:var(--red-bg);color:var(--red-text)}
+.pwish{position:absolute;top:10px;right:10px;width:34px;height:34px;background:rgba(248,245,240,.94);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--muted);cursor:pointer;transition:all .2s;z-index:3}
+.pwish:hover,.pwish:active{background:#fff;color:#D85A30}
+.pinfo{padding:12px 14px 14px}
+.pname{font-size:13px;font-weight:500;color:var(--text);margin-bottom:2px;line-height:1.3}
+.pcat{font-size:10px;color:var(--hint);letter-spacing:.02em}
+.pprice-row{display:flex;align-items:center;gap:7px;margin-top:7px}
+.pprice{font-size:13px;font-weight:500;color:var(--text)}
+.pprice-old{font-size:10px;color:var(--hint);text-decoration:line-through}
+
+/* ── ROOM CARDS ── */
+.room-card{border-radius:var(--radius);overflow:hidden;cursor:pointer;border:0.5px solid var(--border);transition:all .28s;box-shadow:var(--shadow);background:#fff}
+.room-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.room-img{width:100%;aspect-ratio:1.5;overflow:hidden;position:relative}
+.room-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.room-card:hover .room-img img{transform:scale(1.05)}
+.room-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,28,26,.6) 0%,transparent 55%)}
+.room-label{position:absolute;bottom:14px;left:14px;color:#fff;font-family:var(--font-serif);font-size:18px;font-weight:500}
+.room-count{position:absolute;bottom:14px;right:14px;color:rgba(255,255,255,.7);font-size:10px}
+.pinfo .room-link{font-size:10px;color:var(--hint);margin-top:4px}
+
+/* ── SIDEBAR LAYOUT ── */
+.sidebar-layout{display:grid;grid-template-columns:200px 1fr;gap:0}
+.sidebar{padding:20px;border-right:0.5px solid var(--border);display:flex;flex-direction:column;gap:20px;background:#fff}
+.sb-group-title{font-size:9px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--hint);margin-bottom:9px}
+.sb-opt{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);padding:5px 0;cursor:pointer;transition:color .15s}
+.sb-opt:hover{color:var(--text)}
+.cb{width:15px;height:15px;border:0.5px solid var(--stone);border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:9px;color:transparent;transition:all .2s}
+.cb.on{background:var(--text);border-color:var(--text);color:#fff}
+.color-dots{display:flex;gap:6px;flex-wrap:wrap}
+.cdot{width:20px;height:20px;border-radius:50%;cursor:pointer;border:1.5px solid transparent;transition:all .2s}
+.cdot.sel{outline:2px solid var(--text);outline-offset:2px}
+.range-track{height:3px;background:var(--warm);border-radius:2px;margin-top:10px;position:relative}
+.range-fill{position:absolute;left:8%;right:22%;height:3px;background:var(--text);border-radius:2px}
+.grid-area{padding:16px 20px;background:var(--cream)}
+.sort-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.sort-info{font-size:11px;color:var(--muted)}
+.sort-sel{font-size:11px;padding:6px 11px;border:0.5px solid var(--border);border-radius:7px;background:#fff;color:var(--text);cursor:pointer;font-family:var(--font-sans)}
+
+/* ── PRODUCT DETAIL ── */
+.detail-wrap{display:grid;grid-template-columns:1fr 1fr}
+.gallery-side{background:var(--warm);padding:20px;display:flex;flex-direction:column;gap:10px}
+.main-img{border-radius:12px;overflow:hidden;height:340px;position:relative}
+.main-img img{width:100%;height:100%;object-fit:cover}
+.thumbrow{display:flex;gap:8px}
+.dthumb{width:60px;height:60px;background:var(--stone);border-radius:9px;cursor:pointer;border:2px solid transparent;transition:all .2s;overflow:hidden;flex-shrink:0}
+.dthumb img{width:100%;height:100%;object-fit:cover}
+.dthumb.sel{border-color:var(--text);opacity:1}
+.info-side{padding:28px 26px;display:flex;flex-direction:column;gap:14px;background:#fff}
+.breadcrumb{font-size:10px;color:var(--hint);display:flex;align-items:center;gap:5px}
+.dname{font-size:28px;font-weight:500;color:var(--text);line-height:1.2;font-family:var(--font-serif)}
+.rating-row{display:flex;align-items:center;gap:7px}
+.stars{font-size:13px;color:#B8922A;letter-spacing:1px}
+.rating-text{font-size:11px;color:var(--hint)}
+.price-row{display:flex;align-items:baseline;gap:10px}
+.dprice{font-size:26px;font-weight:500;color:var(--text);font-family:var(--font-serif)}
+.dprice-old{font-size:13px;color:var(--hint);text-decoration:line-through}
+.discount-tag{font-size:9px;padding:3px 8px;background:var(--red-bg);color:var(--red-text);border-radius:5px;font-weight:500}
+.opt-head{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--hint);margin-bottom:8px}
+.swatches{display:flex;gap:8px}
+.sw{width:24px;height:24px;border-radius:50%;cursor:pointer;transition:all .2s}
+.sw.sel{outline:2.5px solid var(--text);outline-offset:2px}
+.sizes{display:flex;gap:6px;flex-wrap:wrap}
+.sz{font-size:10px;padding:6px 14px;border:0.5px solid var(--border);border-radius:6px;cursor:pointer;color:var(--muted);background:#fff;transition:all .2s}
+.sz.sel,.sz:hover{background:var(--text);color:var(--cream);border-color:transparent}
+.action-row{display:flex;gap:10px;margin-top:4px}
+.add-btn{flex:1;font-size:13px;padding:13px;background:var(--text);color:var(--cream);border-radius:10px;text-align:center;cursor:pointer;letter-spacing:.04em;transition:opacity .2s;font-weight:500}
+.add-btn:hover{opacity:.84}
+.wish-btn{width:46px;height:46px;border:0.5px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:19px;color:var(--muted);cursor:pointer;transition:all .2s;background:#fff}
+.wish-btn:hover{border-color:var(--text);color:#D85A30}
+.trust-row{display:flex;gap:14px;padding-top:6px;border-top:0.5px solid var(--border)}
+.trust-item{display:flex;align-items:center;gap:6px;font-size:10px;color:var(--hint)}
+.tab-bar{display:flex;background:#fff;border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border)}
+.tab{font-size:11px;padding:12px 16px;color:var(--hint);cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;letter-spacing:.02em}
+.tab.active{color:var(--text);border-bottom-color:var(--text);font-weight:500}
+.tab-body{padding:20px 24px;background:#fff}
+.spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.spec-item{padding:12px;background:var(--cream);border-radius:10px;border:0.5px solid var(--border)}
+.spec-k{font-size:9px;color:var(--hint);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+.spec-v{font-size:12px;font-weight:500;color:var(--text)}
+.prose{font-size:12px;color:var(--muted);line-height:1.9;font-weight:300}
+.review-card{background:var(--cream);border-radius:10px;padding:14px;margin-bottom:10px;border:0.5px solid var(--border)}
+.rv-row{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px}
+.rv-name{font-size:12px;font-weight:500;color:var(--text)}
+.rv-date{font-size:10px;color:var(--hint)}
+.rv-stars{font-size:12px;color:#B8922A;margin-bottom:6px}
+
+/* ── HERO BANNER (secondary) ── */
+.hero-banner{position:relative;overflow:hidden;height:280px;background:#1C1C1A}
+.hero-banner img{width:100%;height:100%;object-fit:cover;opacity:.65}
+.hero-banner-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:48px}
+.hero-banner-eyebrow{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(248,245,240,.6);margin-bottom:10px}
+.hero-banner-h{font-family:var(--font-serif);font-size:38px;font-weight:500;color:#fff;line-height:1.1;margin-bottom:20px}
+
+/* ── ABOUT ── */
+.about-hero{padding:48px 36px;background:#fff;border-bottom:0.5px solid var(--border)}
+.about-eyebrow{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--hint);margin-bottom:12px}
+.about-h1{font-size:36px;font-weight:500;color:var(--text);font-family:var(--font-serif);line-height:1.2;margin-bottom:10px}
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:0.5px solid var(--border)}
+.stat{background:#fff;padding:22px;text-align:center;border-right:0.5px solid var(--border)}
+.stat:last-child{border-right:none}
+.stat-num{font-size:28px;font-weight:500;color:var(--text);font-family:var(--font-serif)}
+.stat-lbl{font-size:10px;color:var(--hint);margin-top:4px}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:0.5px solid var(--border)}
+.story-img{overflow:hidden;min-height:260px;position:relative}
+.story-img img{width:100%;height:100%;object-fit:cover}
+.story-text{padding:36px;display:flex;flex-direction:column;gap:10px;background:#fff}
+.story-h{font-size:20px;font-weight:500;color:var(--text);font-family:var(--font-serif)}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:24px}
+.team-card{background:#fff;border-radius:12px;padding:20px;text-align:center;border:0.5px solid var(--border)}
+.avatar{width:56px;height:56px;border-radius:50%;background:var(--warm);display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-family:var(--font-serif);font-size:16px;font-weight:500;color:var(--muted)}
+.team-name{font-size:13px;font-weight:500;color:var(--text)}
+.team-role{font-size:10px;color:var(--hint);margin-top:3px}
+
+/* ── SHOWROOM ── */
+.sr-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:20px}
+.sr-card{background:#fff;border-radius:var(--radius);overflow:hidden;border:0.5px solid var(--border);box-shadow:var(--shadow)}
+.sr-img{height:160px;overflow:hidden;position:relative}
+.sr-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.sr-card:hover .sr-img img{transform:scale(1.04)}
+.sr-body{padding:16px}
+.sr-city{font-size:15px;font-weight:500;color:var(--text);margin-bottom:5px;font-family:var(--font-serif)}
+.sr-addr{font-size:11px;color:var(--muted);line-height:1.7;margin-bottom:10px}
+.sr-hours{font-size:11px;color:var(--hint);display:flex;align-items:center;gap:5px;margin-bottom:10px}
+.tag-open{font-size:9px;padding:2px 8px;background:var(--green-bg);color:var(--green-text);border-radius:4px;font-weight:500;margin-left:5px}
+
+/* ── INSPO SECTION ── */
+.inspo-section{padding:24px;background:#fff;border-top:0.5px solid var(--border)}
+.inspo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.inspo-card{border-radius:var(--radius);overflow:hidden;border:0.5px solid var(--border);cursor:pointer;transition:all .25s;box-shadow:var(--shadow)}
+.inspo-card:hover{transform:translateY(-3px);border-color:var(--stone);box-shadow:var(--shadow-lg)}
+.inspo-img{height:160px;overflow:hidden;position:relative}
+.inspo-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.inspo-card:hover .inspo-img img{transform:scale(1.05)}
+.inspo-body{padding:14px 16px;background:#fff}
+.inspo-tag{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--hint);margin-bottom:5px}
+.inspo-title{font-size:12px;font-weight:500;color:var(--text);line-height:1.5;font-family:var(--font-serif)}
+
+/* ── NEWSLETTER ── */
+.newsletter-section{background:var(--warm);padding:48px 36px;text-align:center;border-top:0.5px solid var(--border)}
+.newsletter-h{font-size:28px;font-weight:500;color:var(--text);font-family:var(--font-serif);margin-bottom:8px}
+.newsletter-p{font-size:12px;color:var(--muted);margin-bottom:20px;font-weight:300}
+.newsletter-row{display:flex;gap:8px;max-width:380px;margin:0 auto}
+.newsletter-input{flex:1;font-size:12px;padding:11px 16px;border:0.5px solid var(--stone);border-radius:9px;background:#fff;outline:none;font-family:var(--font-sans)}
+.newsletter-input:focus{border-color:var(--text)}
+
+/* ── PROMISE ── */
+.promise-section{display:grid;grid-template-columns:repeat(4,1fr);border-top:0.5px solid var(--border);background:#fff}
+.promise-item{padding:22px 18px;border-right:0.5px solid var(--border);display:flex;flex-direction:column;gap:6px}
+.promise-item:last-child{border-right:none}
+.promise-icon{font-size:22px;color:var(--stone);margin-bottom:2px}
+.promise-title{font-size:12px;font-weight:500;color:var(--text)}
+.promise-desc{font-size:10px;color:var(--hint);line-height:1.6}
+
+/* ── CUSTOM BANNER ── */
+.custom-banner{background:linear-gradient(135deg,#1C1C1A,#2E2E2B);padding:32px;display:flex;align-items:center;justify-content:space-between;gap:20px;margin:0 20px 20px;border-radius:var(--radius);position:relative;overflow:hidden}
+.custom-banner::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=70') center/cover;opacity:.12}
+.custom-banner-eyebrow{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--stone);margin-bottom:6px;position:relative}
+.custom-banner-h{font-size:20px;font-weight:500;color:var(--cream);font-family:var(--font-serif);margin-bottom:6px;line-height:1.25;position:relative}
+.custom-banner-p{font-size:11px;color:var(--stone);line-height:1.7;max-width:380px;font-weight:300;position:relative}
+.btn-gold{font-size:12px;padding:11px 24px;background:var(--gold);color:#fff;border-radius:9px;cursor:pointer;font-weight:500;white-space:nowrap;transition:opacity .2s;position:relative;flex-shrink:0}
+.btn-gold:hover{opacity:.88}
+
+/* ── HOW IT WORKS ── */
+.hiw-section{padding:28px 24px;background:var(--cream);border-top:0.5px solid var(--border)}
+.hiw-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+.hiw-step{background:#fff;border-radius:var(--radius);padding:20px;border:0.5px solid var(--border)}
+.hiw-num{width:32px;height:32px;border-radius:50%;background:var(--text);color:var(--cream);font-family:var(--font-serif);font-size:16px;font-weight:500;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.hiw-title{font-size:13px;font-weight:500;color:var(--text);margin-bottom:6px}
+.hiw-desc{font-size:11px;color:var(--muted);line-height:1.7;font-weight:300}
+
+/* ── MATERIALS ── */
+.mat-section{padding:28px 24px;background:#fff;border-top:0.5px solid var(--border)}
+.mat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+.mat-card{border-radius:var(--radius);overflow:hidden;border:0.5px solid var(--border);background:var(--cream);cursor:pointer;transition:all .25s}
+.mat-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px)}
+.mat-swatch{height:100px;display:flex;align-items:flex-end;padding:12px;font-size:11px;font-weight:500;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.4)}
+.mat-swatch img{width:100%;height:100%;object-fit:cover}
+.mat-info{padding:12px}
+.mat-name{font-size:12px;font-weight:500;color:var(--text);margin-bottom:4px}
+.mat-desc{font-size:10px;color:var(--hint);line-height:1.6;font-weight:300}
+
+/* ── PROCESS STRIP ── */
+.process-strip{display:grid;grid-template-columns:repeat(3,1fr);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);background:var(--cream)}
+.ps-item{padding:24px 20px;border-right:0.5px solid var(--border);display:flex;flex-direction:column;gap:6px}
+.ps-item:last-child{border-right:none}
+.ps-icon{font-size:24px;color:var(--stone);margin-bottom:4px}
+.ps-title{font-size:13px;font-weight:500;color:var(--text)}
+.ps-desc{font-size:11px;color:var(--muted);line-height:1.7;font-weight:300}
+
+/* ── TESTIMONIALS ── */
+.testi-section{padding:28px 24px;background:#fff;border-top:0.5px solid var(--border)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+.testi-card{background:var(--cream);border-radius:var(--radius);padding:20px;border:0.5px solid var(--border)}
+.testi-stars{font-size:13px;color:var(--gold);margin-bottom:10px}
+.testi-text{font-size:12px;color:var(--muted);line-height:1.8;font-style:italic;margin-bottom:12px;font-family:var(--font-serif);font-weight:400}
+.testi-name{font-size:12px;font-weight:500;color:var(--text)}
+.testi-city{font-size:10px;color:var(--hint);margin-top:2px}
+
+/* ── COLLECTION CUSTOM CTA ── */
+.collection-custom-cta{margin:20px;border-radius:var(--radius);background:linear-gradient(135deg,#1C1C1A,#2E2E2B);padding:24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.ccc-eyebrow{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);margin-bottom:6px}
+.ccc-h{font-size:18px;font-weight:500;color:var(--cream);font-family:var(--font-serif);margin-bottom:5px}
+.ccc-p{font-size:11px;color:var(--stone);line-height:1.6;font-weight:300}
+
+/* ── PAGE HEADER ── */
+.page-header{padding:28px 24px;background:#fff;border-bottom:0.5px solid var(--border)}
+.page-eyebrow{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--hint);margin-bottom:8px}
+.page-h1{font-size:28px;font-weight:500;color:var(--text);font-family:var(--font-serif);margin-bottom:5px}
+.page-sub{font-size:12px;color:var(--muted);font-weight:300}
+
+/* ── BACK ROW ── */
+.back-row{display:flex;align-items:center;gap:7px;padding:14px 20px;font-size:11px;color:var(--hint);cursor:pointer;background:#fff;border-bottom:0.5px solid var(--border);transition:color .2s}
+.back-row:hover{color:var(--text)}
+
+/* ── FOOTER ── */
+.footer{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:0;border-top:0.5px solid var(--border);background:#fff}
+.footer>div{padding:32px 24px;border-right:0.5px solid var(--border)}
+.footer>div:last-child{border-right:none}
+.footer-brand{font-family:var(--font-serif);font-size:22px;font-weight:500;color:var(--text);margin-bottom:10px}
+.footer-desc{font-size:11px;color:var(--hint);line-height:1.8;max-width:220px;font-weight:300;margin-bottom:14px}
+.footer-social{display:flex;gap:8px}
+.soc-btn{width:34px;height:34px;border:0.5px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--muted);cursor:pointer;transition:all .2s}
+.soc-btn:hover{border-color:var(--text);color:var(--text)}
+.footer-head{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--hint);margin-bottom:12px}
+.footer-link{font-size:12px;color:var(--muted);cursor:pointer;padding:4px 0;display:block;transition:color .2s;font-weight:300}
+.footer-link:hover{color:var(--text)}
+.footer-bottom{background:#fff;border-top:0.5px solid var(--border);padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+.footer-copy{font-size:10px;color:var(--hint);font-weight:300}
+
+/* ── CONTACT ── */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr}
+.contact-form{padding:24px;border-right:0.5px solid var(--border);background:#fff}
+.contact-info{padding:24px;background:var(--cream)}
+.form-2col{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.form-1col{margin-bottom:10px}
+.form-label{font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--hint);display:block;margin-bottom:5px}
+.form-field{width:100%;font-size:12px;padding:10px 14px;border:0.5px solid var(--border);border-radius:8px;background:#fff;outline:none;font-family:var(--font-sans);transition:border-color .2s;color:var(--text)}
+.form-field:focus{border-color:var(--text)}
+.ci-row{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:0.5px solid var(--border)}
+.ci-row:last-of-type{border-bottom:none}
+.ci-icon{width:34px;height:34px;border-radius:8px;background:var(--warm);display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--muted);flex-shrink:0}
+.ci-label{font-size:10px;color:var(--hint);letter-spacing:.04em;text-transform:uppercase;margin-bottom:2px}
+.ci-val{font-size:12px;color:var(--text);line-height:1.6;font-weight:300}
+
+/* ── DELIVERY ── */
+.del-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:20px}
+.del-card{background:#fff;border-radius:var(--radius);padding:20px;border:0.5px solid var(--border)}
+.del-icon{font-size:24px;color:var(--stone);margin-bottom:10px}
+.del-title{font-size:13px;font-weight:500;color:var(--text);margin-bottom:6px}
+.del-desc{font-size:11px;color:var(--muted);line-height:1.7;font-weight:300}
+.del-table-wrap{padding:0 20px 20px;overflow-x:auto}
+.del-table{width:100%;border-collapse:collapse;font-size:11px}
+.del-table th{text-align:left;padding:10px 14px;background:var(--warm);font-weight:500;font-size:10px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);border:0.5px solid var(--border)}
+.del-table td{padding:10px 14px;border:0.5px solid var(--border);color:var(--muted)}
+.del-table tr:nth-child(even) td{background:var(--cream)}
+
+/* ── RETURNS ── */
+.ret-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:20px}
+.ret-step{background:#fff;border-radius:var(--radius);padding:20px;border:0.5px solid var(--border);text-align:center}
+.ret-num{width:36px;height:36px;border-radius:50%;background:var(--warm);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500;color:var(--muted);margin:0 auto 12px;font-family:var(--font-serif)}
+.ret-title{font-size:12px;font-weight:500;color:var(--text);margin-bottom:5px}
+.ret-desc{font-size:10px;color:var(--hint);line-height:1.7;font-weight:300}
+
+/* ── SALE PAGE ── */
+.sale-hero{padding:32px 24px;background:linear-gradient(135deg,var(--text),#3A3A38);color:var(--cream);position:relative;overflow:hidden}
+.sale-hero::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1200&q=60') center/cover;opacity:.12}
+.sale-eyebrow{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--stone);margin-bottom:10px;position:relative}
+.sale-h1{font-size:40px;font-weight:500;font-family:var(--font-serif);position:relative;margin-bottom:8px;line-height:1.1}
+.sale-sub{font-size:12px;color:var(--stone);position:relative;font-weight:300}
+
+/* ── CUSTOM ORDER ── */
+.custom-form-wrap{display:grid;grid-template-columns:1fr 320px;gap:0}
+.custom-form-main{padding:24px;border-right:0.5px solid var(--border);background:#fff}
+.custom-form-side{padding:20px;background:var(--cream)}
+.section-sub{font-size:11px;color:var(--muted);margin-top:4px;font-weight:300}
+.upload-zone{border:1.5px dashed var(--border);border-radius:12px;padding:28px;text-align:center;cursor:pointer;transition:all .2s;margin-bottom:16px;background:var(--cream)}
+.upload-zone:hover{border-color:var(--text);background:var(--warm)}
+.upload-icon{font-size:28px;color:var(--hint);margin-bottom:8px}
+.upload-text{font-size:12px;color:var(--muted);margin-bottom:4px}
+.upload-sub{font-size:10px;color:var(--hint)}
+.upload-preview{display:none;align-items:center;gap:10px}
+.finish-grid{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.finish-opt{padding:7px 14px;border:0.5px solid var(--border);border-radius:7px;font-size:11px;color:var(--muted);cursor:pointer;transition:all .2s;background:#fff}
+.finish-opt.sel{background:var(--text);color:var(--cream);border-color:var(--text)}
+.wood-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px}
+.wood-opt{border-radius:9px;overflow:hidden;cursor:pointer;border:2px solid transparent;transition:all .2s}
+.wood-opt.sel{border-color:var(--text)}
+.wood-swatch{height:48px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:500;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.5)}
+.wood-label{padding:6px;font-size:9px;text-align:center;color:var(--muted);background:#fff}
+.colour-pick-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-top:8px}
+.cpick{width:100%;aspect-ratio:1;border-radius:8px;cursor:pointer;border:2px solid transparent;transition:all .2s}
+.cpick.sel{outline:2.5px solid var(--text);outline-offset:2px}
+.size-inputs{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.sum-box{background:#fff;border-radius:12px;border:0.5px solid var(--border);padding:16px;margin-bottom:14px}
+.sum-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:0.5px solid var(--border);font-size:11px}
+.sum-row:last-child{border-bottom:none}
+.sum-key{color:var(--hint)}
+.sum-val{color:var(--text);font-weight:500}
+.submit-section{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 24px;background:var(--warm);border-top:0.5px solid var(--border)}
+.btn-lg{font-size:13px;padding:13px 28px;background:var(--text);color:var(--cream);border-radius:10px;cursor:pointer;font-weight:500;transition:opacity .2s}
+.btn-lg:hover{opacity:.84}
+.success-overlay{display:none;position:fixed;inset:0;background:rgba(28,28,26,.7);z-index:500;align-items:center;justify-content:center}
+.success-overlay.show{display:flex}
+.success-card{background:var(--cream);border-radius:20px;padding:36px;max-width:340px;text-align:center;margin:16px}
+.success-icon{font-size:40px;color:var(--green-text);margin-bottom:16px}
+.success-h{font-size:22px;font-weight:500;color:var(--text);font-family:var(--font-serif);margin-bottom:8px}
+.success-p{font-size:12px;color:var(--muted);line-height:1.7;margin-bottom:20px;font-weight:300}
+
+/* ── ORDER STATUS ── */
+.order-steps-bar{display:flex;align-items:center;padding:18px 24px;background:#fff;border-bottom:0.5px solid var(--border);gap:0}
+.order-step{display:flex;align-items:center;gap:7px;flex:1}
+.order-step:last-child{flex:none}
+.ostep-num{width:24px;height:24px;border-radius:50%;background:var(--text);color:var(--cream);font-size:10px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ostep-num.done{background:var(--green-text)}
+.ostep-num.pending{background:var(--warm);color:var(--hint)}
+.ostep-label{font-size:10px;color:var(--text);font-weight:500}
+.ostep-line{flex:1;height:1px;background:var(--border);margin:0 8px}
+
+/* ── CAREERS ── */
+.career-list{padding:0 20px 20px}
+.career-card{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;background:#fff;border-radius:10px;border:0.5px solid var(--border);margin-bottom:8px;cursor:pointer;transition:all .2s}
+.career-card:hover{border-color:var(--stone);box-shadow:var(--shadow)}
+.career-title{font-size:13px;font-weight:500;color:var(--text);margin-bottom:4px}
+.career-meta{display:flex;gap:6px;font-size:10px;color:var(--hint)}
+.career-badge{font-size:9px;padding:3px 10px;border-radius:50px;font-weight:500}
+.badge-design{background:var(--gold-bg);color:var(--gold)}
+.badge-mkt{background:#EDF4FD;color:#1A5FA8}
+.badge-ops{background:var(--green-bg);color:var(--green-text)}
+.badge-support{background:var(--red-bg);color:var(--red-text)}
+
+/* ── COLLECTION ── */
+.coll-hero{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;background:#fff;border-bottom:0.5px solid var(--border)}
+.coll-h{font-size:22px;font-weight:500;color:var(--text);font-family:var(--font-serif)}
+.empty-state{text-align:center;padding:60px 24px;color:var(--hint)}
+.empty-icon{font-size:44px;margin-bottom:14px;opacity:.4}
+.empty-title{font-size:16px;font-weight:500;color:var(--text);font-family:var(--font-serif);margin-bottom:6px}
+.empty-sub{font-size:12px;color:var(--hint);font-weight:300}
+
+/* ── MOBILE MENU ── */
+.mob-menu-btn{display:none;width:38px;height:38px;align-items:center;justify-content:center;border-radius:9px;cursor:pointer;color:var(--muted);font-size:22px;border:none;background:transparent}
+.mob-menu-btn:hover{background:var(--warm);color:var(--text)}
+.mob-drawer{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:200;background:rgba(0,0,0,.5)}
+.mob-drawer.open{display:block}
+.mob-panel{position:absolute;top:0;left:0;bottom:0;width:80%;max-width:320px;background:var(--cream);display:flex;flex-direction:column;overflow-y:auto;transform:translateX(-100%);transition:transform .28s ease}
+.mob-drawer.open .mob-panel{transform:translateX(0)}
+.mob-panel-head{display:flex;align-items:center;justify-content:space-between;padding:20px;border-bottom:0.5px solid var(--border);background:#fff}
+.mob-logo{font-family:var(--font-serif);font-size:18px;font-weight:500;color:var(--text)}
+.mob-close{font-size:24px;color:var(--muted);cursor:pointer;padding:4px}
+.mob-nav-item{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;font-size:15px;color:var(--text);border-bottom:0.5px solid var(--border);cursor:pointer;transition:background .15s;font-weight:300}
+.mob-nav-item:hover{background:var(--warm)}
+.mob-nav-item.gold{color:var(--gold);font-weight:500}
+.mob-nav-bottom{padding:20px;margin-top:auto;display:flex;gap:10px;border-top:0.5px solid var(--border)}
+
+/* ── TABLET ── */
+@media(max-width:1024px){
+  .pgrid{grid-template-columns:repeat(3,1fr)}
+  .pgrid4{grid-template-columns:repeat(3,1fr)}
+  .footer{grid-template-columns:1fr 1fr;gap:0}
+  .footer>div{border-bottom:0.5px solid var(--border)}
+}
+@media(max-width:900px){
+  body{font-size:14px}
+  .nav-center{display:none}
+  .mob-menu-btn{display:flex}
+  .nav{padding:0 16px;height:54px}
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-left{padding:36px 24px 28px;gap:14px}
+  .hero-h1{font-size:42px}
+  .hero-right{min-height:280px}
+  .pgrid{grid-template-columns:repeat(2,1fr)}
+  .pgrid4{grid-template-columns:repeat(2,1fr)}
+  .pgrid3{grid-template-columns:repeat(2,1fr)}
+  .sidebar-layout{grid-template-columns:1fr}
+  .sidebar{display:none}
+  .sidebar.mob-open{display:flex;border-right:none;border-bottom:0.5px solid var(--border)}
+  .detail-wrap{grid-template-columns:1fr}
+  .main-img{height:280px}
+  .stat-row{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:none}
+  .stat:nth-child(3){border-right:0.5px solid var(--border)}
+  .story-grid{grid-template-columns:1fr}
+  .story-img{min-height:200px}
+  .team-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-grid{grid-template-columns:1fr}
+  .contact-form{border-right:none;border-bottom:0.5px solid var(--border)}
+  .sr-grid{grid-template-columns:1fr}
+  .del-grid{grid-template-columns:repeat(2,1fr)}
+  .ret-steps{grid-template-columns:repeat(2,1fr)}
+  .custom-form-wrap{grid-template-columns:1fr}
+  .custom-form-main{border-right:none;border-bottom:0.5px solid var(--border)}
+  .footer{grid-template-columns:1fr 1fr}
+  .mat-grid{grid-template-columns:repeat(2,1fr)}
+  .testi-grid{grid-template-columns:1fr}
+  .inspo-grid{grid-template-columns:1fr 1fr}
+  .process-strip{grid-template-columns:1fr}
+  .ps-item{border-right:none;border-bottom:0.5px solid var(--border)}
+  .hiw-steps{grid-template-columns:repeat(2,1fr)}
+  .promise-section{grid-template-columns:repeat(2,1fr)}
+  .promise-item:nth-child(2){border-right:none}
+  .promise-item:nth-child(3){border-right:0.5px solid var(--border)}
+  .custom-banner{flex-direction:column;align-items:flex-start;margin:0 12px 12px}
+  .collection-custom-cta{flex-direction:column;align-items:flex-start}
+  .stats-ribbon{grid-template-columns:repeat(2,1fr)}
+  .ribbon-stat:nth-child(2){border-right:none}
+  .ribbon-stat:nth-child(3){border-right:0.5px solid var(--border)}
+}
+@media(max-width:600px){
+  .announce{font-size:10px;padding:8px 12px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+  .nav{padding:0 14px;height:52px}
+  .logo{font-size:19px}
+  .hero-left{padding:28px 18px 22px}
+  .hero-h1{font-size:34px}
+  .hero-right{min-height:220px}
+  .pgrid,.pgrid4,.pgrid3{grid-template-columns:1fr 1fr}
+  .prod-section{padding:0 14px 16px}
+  .section-h{font-size:18px}
+  .main-img{height:220px}
+  .dname{font-size:22px}
+  .dprice{font-size:22px}
+  .info-side{padding:18px 16px}
+  .spec-grid{grid-template-columns:1fr}
+  .tab{font-size:10px;padding:10px 12px}
+  .stat-row{grid-template-columns:1fr 1fr}
+  .stat{padding:16px}
+  .stat-num{font-size:22px}
+  .team-grid{grid-template-columns:1fr 1fr}
+  .form-2col{grid-template-columns:1fr}
+  .footer{grid-template-columns:1fr}
+  .footer>div{border-right:none}
+  .newsletter-row{flex-direction:column}
+  .newsletter-input{width:100%}
+  .newsletter-row .btn-primary{width:100%;text-align:center}
+  .promise-section{grid-template-columns:1fr 1fr}
+  .promise-item{border-right:none;border-bottom:0.5px solid var(--border);padding:16px}
+  .promise-item:nth-child(odd){border-right:0.5px solid var(--border)}
+  .promise-item:nth-child(3){border-right:none}
+  .promise-item:last-child{border-bottom:none}
+  .inspo-grid{grid-template-columns:1fr}
+  .career-card{flex-direction:column;align-items:flex-start;gap:10px}
+  .sort-bar{flex-direction:column;align-items:flex-start;gap:7px}
+  .back-row{padding:11px 14px}
+  .hiw-steps{grid-template-columns:1fr 1fr}
+  .mat-grid{grid-template-columns:1fr 1fr}
+  .del-grid{grid-template-columns:1fr}
+  .ret-steps{grid-template-columns:1fr 1fr}
+  .colour-pick-grid{grid-template-columns:repeat(5,1fr)}
+  .wood-grid{grid-template-columns:repeat(2,1fr)}
+  .size-inputs{grid-template-columns:1fr 1fr 1fr}
+  .submit-section{flex-direction:column;align-items:stretch;padding:14px 16px}
+  .btn-lg{text-align:center}
+  .custom-banner{padding:22px 18px;margin:0 12px 12px}
+  .custom-banner-h{font-size:16px}
+  .btn-gold{width:100%;text-align:center}
+  .sr-grid{grid-template-columns:1fr}
+  .order-steps-bar{padding:12px 14px;overflow-x:auto}
+  .ostep-label{font-size:9px}
+  .stats-ribbon{grid-template-columns:repeat(2,1fr)}
+  .ribbon-stat:nth-child(2){border-right:none}
+  .ribbon-stat:nth-child(3){border-right:0.5px solid var(--border)}
+  .testi-grid{grid-template-columns:1fr}
+  .hero-banner{height:200px}
+  .hero-banner-h{font-size:26px}
+  .hero-banner-content{padding:28px}
+  .about-hero{padding:28px 20px}
+  .about-h1{font-size:28px}
+  .inspo-img{height:130px}
+  .sr-img{height:130px}
+}
+
+/* NAV DROPDOWN */
+.nav-dd-wrap{position:relative;display:inline-block}
+.nav-dd-trigger{font-size:12px;color:var(--muted);padding:7px 12px;border-radius:8px;letter-spacing:.01em;cursor:pointer;display:block;transition:all .2s;font-weight:400;user-select:none}
+.nav-dd-wrap:hover .nav-dd-trigger,.nav-dd-trigger:hover{color:var(--text);background:var(--warm)}
+.nav-dd-menu{display:none;position:absolute;top:calc(100% + 6px);left:0;background:#fff;border:0.5px solid var(--border);border-radius:14px;box-shadow:0 8px 32px rgba(28,28,26,.12);min-width:180px;z-index:500;padding:6px}
+.nav-dd-wrap:hover .nav-dd-menu{display:block}
+.nav-dd-item{padding:10px 14px;font-size:12px;color:var(--muted);border-radius:9px;cursor:pointer;transition:background .15s}
+.nav-dd-item:hover{background:var(--warm);color:var(--text)}
+
+/* SEARCH OVERLAY */
+.srch-overlay{display:none;position:fixed;inset:0;background:rgba(28,28,26,.5);z-index:600;align-items:flex-start;justify-content:center;padding-top:72px;backdrop-filter:blur(6px)}
+.srch-overlay.open{display:flex}
+.srch-box{background:#fff;border-radius:18px;width:100%;max-width:560px;margin:0 20px;box-shadow:0 20px 60px rgba(28,28,26,.25);overflow:hidden}
+.srch-row{display:flex;align-items:center;gap:10px;padding:16px 20px;border-bottom:.5px solid var(--border)}
+.srch-input{flex:1;font-size:15px;border:none;outline:none;font-family:var(--font-sans);color:var(--text);background:transparent}
+.srch-input::placeholder{color:var(--hint)}
+.srch-close{font-size:18px;color:var(--hint);cursor:pointer;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:8px;transition:all .2s}
+.srch-close:hover{background:var(--warm);color:var(--text)}
+.srch-results{max-height:380px;overflow-y:auto;padding:8px}
+.srch-item{display:flex;align-items:center;gap:12px;padding:10px;border-radius:10px;cursor:pointer;transition:background .15s}
+.srch-item:hover{background:var(--warm)}
+.srch-img{width:46px;height:46px;border-radius:8px;background:var(--warm);flex-shrink:0;overflow:hidden}
+.srch-img img{width:100%;height:100%;object-fit:cover}
+.srch-name{font-size:12px;font-weight:500;color:var(--text)}
+.srch-cat{font-size:10px;color:var(--hint);margin-top:2px}
+.srch-price{font-size:12px;font-weight:500;color:var(--text);margin-left:auto;flex-shrink:0}
+.srch-empty{padding:28px;text-align:center;color:var(--hint);font-size:12px}
+.srch-tags{padding:10px 16px;display:flex;gap:8px;flex-wrap:wrap}
+.srch-tag{font-size:10px;color:var(--muted);background:var(--warm);border-radius:20px;padding:5px 12px;cursor:pointer;transition:background .15s}
+.srch-tag:hover{background:var(--stone);color:var(--text)}
+
+/* GLASS FLOATING NAV */
+.glass-nav{position:fixed;bottom:24px;right:20px;z-index:400;display:none}
+.glass-nav.show{display:block}
+.glass-nav-btn{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.82);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:.5px solid rgba(200,184,154,.5);border-radius:50px;padding:11px 20px;box-shadow:0 8px 28px rgba(28,28,26,.16);cursor:pointer;transition:all .25s}
+.glass-nav-btn:hover{background:rgba(255,255,255,.96);box-shadow:0 12px 40px rgba(28,28,26,.22)}
+.glass-nav-dots{display:flex;gap:4px}
+.glass-dot{width:6px;height:6px;border-radius:50%;background:var(--stone)}
+.glass-nav-lbl{font-size:11px;font-weight:500;color:var(--text);letter-spacing:.03em}
+.glass-popup{display:none;position:absolute;bottom:calc(100% + 10px);right:0;background:rgba(255,255,255,.97);backdrop-filter:blur(18px);border:.5px solid var(--border);border-radius:16px;padding:8px;box-shadow:0 12px 40px rgba(28,28,26,.18);min-width:170px}
+.glass-popup.open{display:block}
+.gp-item{padding:10px 14px;font-size:12px;color:var(--muted);border-radius:10px;cursor:pointer;transition:background .15s}
+.gp-item:hover{background:var(--warm);color:var(--text)}
+
+/* COLOUR PICKER WITH LABELS */
+.colour-pick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:8px}
+.cpick-wrap{display:flex;flex-direction:column;align-items:center;gap:5px}
+.cpick-lbl{font-size:9px;color:var(--muted);text-align:center;letter-spacing:.02em}
+
+/* NICHE FOOTER SECTION */
+.niche-section{background:var(--text);color:var(--cream);padding:40px 32px;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px}
+.niche-brand{font-family:var(--font-serif);font-size:22px;font-weight:500;margin-bottom:10px}
+.niche-desc{font-size:11px;opacity:.6;line-height:1.7;font-weight:300;max-width:220px}
+.niche-social{display:flex;gap:8px;margin-top:16px}
+.niche-soc{width:32px;height:32px;border-radius:8px;border:.5px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px;transition:all .2s}
+.niche-soc:hover{background:rgba(255,255,255,.12)}
+.niche-head{font-size:9px;letter-spacing:.12em;text-transform:uppercase;opacity:.45;margin-bottom:12px;font-weight:500}
+.niche-link{font-size:12px;opacity:.65;cursor:pointer;padding:5px 0;transition:opacity .15s;font-weight:300}
+.niche-link:hover{opacity:1}
+.niche-link.gold{color:var(--gold);opacity:1}
+
+</style>
+
+<div class="site" id="site">
+
+
+
+<div class="nav">
+  <div style="display:flex;align-items:center;gap:8px">
+    <button class="mob-menu-btn" onclick="openMobMenu()" aria-label="Menu"><i class="ti ti-menu-2"></i></button>
+    <div class="logo" onclick="go('home')">Maison</div>
+  </div>
+  <div class="nav-center">
+    <div class="nav-item" onclick="go('home')">Home</div>
+    <div class="nav-item nav-dd-wrap" id="nav-collections">
+      <span class="nav-dd-trigger" onclick="toggleNavDd()">Collections ▾</span>
+      <div class="nav-dd-menu" id="nav-dd-menu">
+        <div class="nav-dd-item" onclick="go('living');closeNavDd()">🛋 Living Room</div>
+        <div class="nav-dd-item" onclick="go('bedroom');closeNavDd()">🛏 Bedroom</div>
+        <div class="nav-dd-item" onclick="go('dining');closeNavDd()">🍽 Dining</div>
+        <div class="nav-dd-item" onclick="go('lighting');closeNavDd()">💡 Lighting</div>
+        <div class="nav-dd-item" onclick="go('storage');closeNavDd()">🗄 Storage</div>
+        <div class="nav-dd-item" onclick="go('outdoor');closeNavDd()">🌿 Outdoor</div>
+      </div>
+    </div>
+    <div class="nav-item" onclick="go('sale')">Sale</div>
+    <div class="nav-item" onclick="go('custom')" style="color:var(--gold);font-weight:500">Custom Order</div>
+    <div class="nav-item" onclick="go('about')">About</div>
+    <div class="nav-item" onclick="go('showroom')">Showroom</div>
+    <div class="nav-item" onclick="go('contact')">Contact</div>
+    <div class="nav-item" onclick="go('collection')">Collection</div>
+  </div>
+  <div class="nav-right">
+    <div class="icon-btn" onclick="openSearch()"><i class="ti ti-search" aria-hidden="true"></i></div>
+    <div class="icon-btn" onclick="go('collection')"><i class="ti ti-heart" aria-hidden="true"></i></div>
+    <div class="icon-btn cart-dot"><i class="ti ti-shopping-bag" aria-hidden="true"></i></div>
+  </div>
+</div>
+
+<!-- MOBILE DRAWER -->
+<div class="mob-drawer" id="mob-drawer" onclick="closeMobMenuOutside(event)">
+  <div class="mob-panel" id="mob-panel">
+    <div class="mob-panel-head">
+      <div class="mob-logo">Maison</div>
+      <div class="mob-close" onclick="closeMobMenu()"><i class="ti ti-x"></i></div>
+    </div>
+    <div class="mob-nav-item" onclick="mobGo('home')"><span>Home</span><i class="ti ti-chevron-right" style="color:var(--hint);font-size:14px"></i></div>
+    <div class="mob-nav-item" onclick="mobGo('living')"><span>Living Room</span><i class="ti ti-chevron-right" style="color:var(--hint);font-size:14px"></i></div>
+    <div class="mob-nav-item" onclick="mobGo('bedroom')"><span>Bedroom</span><i class="ti ti-chevron-right" style="color:var(--hint);font-size:14px"></i></div>
+    <div class="mob-nav-item" onclick="mobGo('outdoor')"><span>Outdoor</span><i class="ti ti-chevron-right" style="color:var(--hint);font-size:14px"></i></div>
+    <div class="mob-nav-item" onclick="mobGo('dining')"><span>Dining</span><i class="ti ti-chevron-right" style="color:var(--hint);font-size:14px"></i></div>
+    <div class="mob-nav-item" onclick="mobGo('lighting')"><span>Lighting</span><i class="ti ti-chevron-right" style="color:var(--hint);font-size:14px"></i></div>
+    <div class="mob-nav-item" onclick="mobGo('storage')"><span>Storage</span><i class="ti ti-chevron-right" style="color:var(--hint);font-size:14px"></i></div>
+    <div class="mob-nav-item" onclick="mobGo('sale')"><span>Sale</span><i class="ti ti-chevron-right" style="color:var(--hint);font-size:14px"></i></div>
+    <div class="mob-nav-item" onclick="mobGo('about')"><span>About</span><i class="ti ti-chevron-right" style="color:var(--hint);font-size:14px"></i></div>
+    <div class="mob-nav-item" onclick="mobGo('showroom')"><span>Showroom</span><i class="ti ti-chevron-right" style="color:var(--hint);font-size:14px"></i></div>
+    <div class="mob-nav-item" onclick="mobGo('delivery')"><span>Delivery & Returns</span><i class="ti ti-chevron-right" style="color:var(--hint);font-size:14px"></i></div>
+    <div class="mob-nav-item" onclick="mobGo('contact')"><span>Contact</span><i class="ti ti-chevron-right" style="color:var(--hint);font-size:14px"></i></div>
+    <div class="mob-nav-item gold" onclick="mobGo('custom')"><span>✦ Custom Order</span><i class="ti ti-chevron-right" style="font-size:14px"></i></div>
+    <div class="mob-nav-bottom">
+      <div class="icon-btn" onclick="mobGo('collection')" style="width:44px;height:44px;border:0.5px solid var(--border);border-radius:9px;background:#fff;font-size:19px"><i class="ti ti-heart"></i></div>
+      <div class="btn-primary" onclick="mobGo('living')" style="flex:1;text-align:center;font-size:13px">Shop Now</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ HOME ═══ -->
+<div class="page active" id="page-home">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">New collection — 2025</div>
+      <div class="hero-h1">Crafted for<br><em>living well.</em></div>
+      <div class="hero-p">Timeless furniture made by hand in Lahore. Sheesham, cane and Belgian linen — built to last a lifetime, not a trend cycle.</div>
+      <div class="hero-actions">
+        <div class="btn-primary" onclick="go('living')">Explore collection</div>
+        <div class="btn-ghost" onclick="go('custom')">Custom order</div>
+      </div>
+    </div>
+    <div class="hero-right" style="display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#2C2C2A,#1C1C1A)">
+      <div style="text-align:center;color:rgba(248,245,240,0.25)"><i class="ti ti-sofa" style="font-size:120px;display:block;margin-bottom:12px"></i><div style="font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:300">Premium furniture</div></div>
+      <div class="hero-tag-float">
+        <div class="hero-tag-label">Latest drop</div>
+        <div class="hero-tag-val">Oslo sofa series</div>
+      </div>
+      <div class="hero-badge">New 2025</div>
+    </div>
+  </div>
+
+  <!-- STATS RIBBON -->
+  <div class="stats-ribbon">
+    <div class="ribbon-stat"><div class="ribbon-num">15</div><div class="ribbon-lbl">Years of craft</div></div>
+    <div class="ribbon-stat"><div class="ribbon-num">12K+</div><div class="ribbon-lbl">Homes furnished</div></div>
+    <div class="ribbon-stat"><div class="ribbon-num">200+</div><div class="ribbon-lbl">Artisans</div></div>
+    <div class="ribbon-stat"><div class="ribbon-num">4</div><div class="ribbon-lbl">Showrooms</div></div>
+  </div>
+
+  <!-- CATEGORY ROW -->
+  <div class="cat-row">
+    <div class="cat-chip active">
+      <div class="cat-icon"><i class="ti ti-layout-grid" aria-hidden="true"></i></div>
+      <div class="cat-label">All</div>
+    </div>
+    <div class="cat-chip" onclick="go('living')">
+      <div class="cat-icon"><i class="ti ti-sofa" aria-hidden="true"></i></div>
+      <div class="cat-label">Living room</div>
+    </div>
+    <div class="cat-chip" onclick="go('bedroom')">
+      <div class="cat-icon"><i class="ti ti-bed" aria-hidden="true"></i></div>
+      <div class="cat-label">Bedroom</div>
+    </div>
+    <div class="cat-chip" onclick="go('outdoor')">
+      <div class="cat-icon"><i class="ti ti-tree" aria-hidden="true"></i></div>
+      <div class="cat-label">Outdoor</div>
+    </div>
+    <div class="cat-chip" onclick="go('sale')">
+      <div class="cat-icon"><i class="ti ti-tag" aria-hidden="true"></i></div>
+      <div class="cat-label">Sale</div>
+    </div>
+    <div class="cat-chip">
+      <div class="cat-icon"><i class="ti ti-table" aria-hidden="true"></i></div>
+      <div class="cat-label">Dining</div>
+    </div>
+    <div class="cat-chip">
+      <div class="cat-icon"><i class="ti ti-lamp" aria-hidden="true"></i></div>
+      <div class="cat-label">Lighting</div>
+    </div>
+    <div class="cat-chip">
+      <div class="cat-icon"><i class="ti ti-archive" aria-hidden="true"></i></div>
+      <div class="cat-label">Storage</div>
+    </div>
+    <div class="cat-chip" onclick="go('custom')" style="background:var(--gold-bg);border:0.5px solid #E8D89A">
+      <div class="cat-icon" style="background:#FBF0D0"><i class="ti ti-pencil-star" style="color:var(--gold)" aria-hidden="true"></i></div>
+      <div class="cat-label" style="color:var(--gold);font-weight:500">Custom</div>
+    </div>
+  </div>
+
+  <!-- FEATURED PRODUCTS -->
+  <div class="prod-section">
+    <div class="section-row"><div class="section-h">Featured pieces</div><div class="section-link" onclick="go('living')">View all →</div></div>
+    <div class="pgrid4">
+      <div class="pcard" onclick="prod('Oslo 3-seater sofa','Living room','Rs. 85,000','Rs. 1,00,000','Kiln-dried sheesham frame, Belgian linen upholstery, HR foam + fibre wrap cushions. 220×90×80 cm.','https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80')">
+        <div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-new">New</div><div class="pwish" onclick="event.stopPropagation();saveItem('Oslo 3-seater sofa','Living room','Rs. 85,000','Rs. 1,00,000','Kiln-dried sheesham.','https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80')"><i class="ti ti-heart" aria-hidden="true"></i></div></div>
+        <div class="pinfo"><div class="pname">Oslo 3-seater sofa</div><div class="pcat">Living room</div><div class="pprice-row"><div class="pprice">Rs. 85,000</div><div class="pprice-old">Rs. 1,00,000</div></div></div>
+      </div>
+      <div class="pcard" onclick="prod('Aura dining table','Dining','Rs. 62,000','','Solid walnut top, powder-coated steel base. Seats 6. 180×90×76 cm.','https://images.unsplash.com/photo-1549187774-b4e9b0445b41?w=600&q=80')">
+        <div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pwish" onclick="event.stopPropagation();saveItem('Aura dining table','Dining','Rs. 62,000','','Solid walnut.','https://images.unsplash.com/photo-1549187774-b4e9b0445b41?w=600&q=80')"><i class="ti ti-heart" aria-hidden="true"></i></div></div>
+        <div class="pinfo"><div class="pname">Aura dining table</div><div class="pcat">Dining</div><div class="pprice-row"><div class="pprice">Rs. 62,000</div></div></div>
+      </div>
+      <div class="pcard" onclick="prod('Luma bed frame','Bedroom','Rs. 54,500','Rs. 68,000','Solid sheesham headboard, slatted base. Queen & king sizes. White glove delivery included.','https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80')">
+        <div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-sale">−20%</div><div class="pwish" onclick="event.stopPropagation();saveItem('Luma bed frame','Bedroom','Rs. 54,500','Rs. 68,000','Sheesham headboard.','https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80')"><i class="ti ti-heart" aria-hidden="true"></i></div></div>
+        <div class="pinfo"><div class="pname">Luma bed frame</div><div class="pcat">Bedroom</div><div class="pprice-row"><div class="pprice">Rs. 54,500</div><div class="pprice-old">Rs. 68,000</div></div></div>
+      </div>
+      <div class="pcard" onclick="prod('Cane armchair','Living room','Rs. 28,000','','Hand-woven cane back, solid oak legs, removable linen cushion. 72×68×82 cm.','https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=600&q=80')">
+        <div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pwish" onclick="event.stopPropagation();saveItem('Cane armchair','Living room','Rs. 28,000','','Hand-woven cane.','https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=600&q=80')"><i class="ti ti-heart" aria-hidden="true"></i></div></div>
+        <div class="pinfo"><div class="pname">Cane armchair</div><div class="pcat">Living room</div><div class="pprice-row"><div class="pprice">Rs. 28,000</div></div></div>
+      </div>
+    </div>
+
+    <!-- SHOP BY ROOM -->
+    <div class="section-row" style="margin-top:12px"><div class="section-h">Shop by room</div></div>
+    <div class="pgrid3">
+      <div class="room-card" onclick="go('living')">
+        <div class="room-img" style="background:#586058;display:flex;align-items:center;justify-content:center;position:relative"><i class="ti ti-sofa" style="font-size:64px;color:rgba(255,255,255,0.2)"></i><div class="room-overlay"></div><div class="room-label">Living room</div><div class="room-count">32 pieces</div></div>
+      </div>
+      <div class="room-card" onclick="go('bedroom')">
+        <div class="room-img" style="background:#504850;display:flex;align-items:center;justify-content:center;position:relative"><i class="ti ti-bed" style="font-size:64px;color:rgba(255,255,255,0.2)"></i><div class="room-overlay"></div><div class="room-label">Bedroom</div><div class="room-count">24 pieces</div></div>
+      </div>
+      <div class="room-card" onclick="go('outdoor')">
+        <div class="room-img" style="background:#3D5C3D;display:flex;align-items:center;justify-content:center;position:relative"><i class="ti ti-trees" style="font-size:64px;color:rgba(255,255,255,0.2)"></i><div class="room-overlay"></div><div class="room-label">Outdoor</div><div class="room-count">18 pieces</div></div>
+      </div>
+      <div class="room-card" onclick="go('dining')">
+        <div class="room-img" style="background:#5C4A3D;display:flex;align-items:center;justify-content:center;position:relative"><i class="ti ti-table" style="font-size:64px;color:rgba(255,255,255,0.2)"></i><div class="room-overlay"></div><div class="room-label">Dining</div><div class="room-count">8 pieces</div></div>
+      </div>
+      <div class="room-card" onclick="go('lighting')">
+        <div class="room-img" style="background:#5C5040;display:flex;align-items:center;justify-content:center;position:relative"><i class="ti ti-lamp" style="font-size:64px;color:rgba(255,255,255,0.2)"></i><div class="room-overlay"></div><div class="room-label">Lighting</div><div class="room-count">7 pieces</div></div>
+      </div>
+      <div class="room-card" onclick="go('storage')">
+        <div class="room-img" style="background:#484854;display:flex;align-items:center;justify-content:center;position:relative"><i class="ti ti-layout-sidebar" style="font-size:64px;color:rgba(255,255,255,0.2)"></i><div class="room-overlay"></div><div class="room-label">Storage</div><div class="room-count">7 pieces</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CUSTOM BANNER -->
+  <div class="custom-banner" onclick="go('custom')" style="cursor:pointer">
+    <div>
+      <div class="custom-banner-eyebrow">Bespoke · Made to order</div>
+      <div class="custom-banner-h">Design your own furniture,<br>exactly the way you want it.</div>
+      <div class="custom-banner-p">Upload a reference image, choose your wood, colour, finish and dimensions — we build it by hand in our Lahore workshop. 4–8 weeks delivery.</div>
+    </div>
+    <div class="btn-gold" onclick="event.stopPropagation();go('custom')">Start custom order →</div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="hiw-section">
+    <div class="section-h">How custom orders work</div>
+    <div class="hiw-steps">
+      <div class="hiw-step"><div class="hiw-num">1</div><div class="hiw-title">Share your vision</div><div class="hiw-desc">Upload a reference photo and fill in your preferences — colour, wood, size and finish.</div></div>
+      <div class="hiw-step"><div class="hiw-num">2</div><div class="hiw-title">We quote you</div><div class="hiw-desc">Our team reviews within 24 hours and sends a detailed quote with 3D rendering.</div></div>
+      <div class="hiw-step"><div class="hiw-num">3</div><div class="hiw-title">Workshop crafts it</div><div class="hiw-desc">200+ artisans in our Lahore workshop build your piece over 4–8 weeks with weekly updates.</div></div>
+      <div class="hiw-step"><div class="hiw-num">4</div><div class="hiw-title">White glove delivery</div><div class="hiw-desc">Your piece arrives assembled by our team. 5-year structural warranty included.</div></div>
+    </div>
+  </div>
+
+  <!-- MATERIAL SHOWCASE -->
+  <div class="mat-section">
+    <div class="section-h">Our materials</div>
+    <div style="font-size:12px;color:var(--muted);margin-top:5px;font-weight:300">Sustainably sourced, built to last a lifetime.</div>
+    <div class="mat-grid">
+      <div class="mat-card"><div class="mat-swatch" style="background:linear-gradient(135deg,#8B6914,#6B4F10);height:90px;display:flex;align-items:flex-end;padding:10px;font-size:11px;font-weight:600;color:#fff">Sheesham</div><div class="mat-info"><div class="mat-name">Indian Rosewood</div><div class="mat-desc">Dense, durable, naturally termite-resistant. Our most used wood.</div></div></div>
+      <div class="mat-card"><div class="mat-swatch" style="background:linear-gradient(135deg,#5C3D1E,#3E2810);height:90px;display:flex;align-items:flex-end;padding:10px;font-size:11px;font-weight:600;color:#fff">Walnut</div><div class="mat-info"><div class="mat-name">Black Walnut</div><div class="mat-desc">Rich dark grain, premium look. For dining and statement pieces.</div></div></div>
+      <div class="mat-card"><div class="mat-swatch" style="background:linear-gradient(135deg,#C4943A,#A0772A);height:90px;display:flex;align-items:flex-end;padding:10px;font-size:11px;font-weight:600;color:#fff">Oak</div><div class="mat-info"><div class="mat-name">White Oak</div><div class="mat-desc">Light, contemporary grain. Perfect for Scandinavian styles.</div></div></div>
+      <div class="mat-card"><div class="mat-swatch" style="background:linear-gradient(135deg,#3D7A3D,#2A5C2A);height:90px;display:flex;align-items:flex-end;padding:10px;font-size:11px;font-weight:600;color:#fff">Teak</div><div class="mat-info"><div class="mat-name">Burmese Teak</div><div class="mat-desc">Weatherproof, outdoor-ready. High natural oil content.</div></div></div>
+    </div>
+  </div>
+
+  <!-- PROCESS STRIP -->
+  <div class="process-strip">
+    <div class="ps-item"><div class="ps-icon"><i class="ti ti-building-factory" aria-hidden="true"></i></div><div class="ps-title">Made in Lahore</div><div class="ps-desc">40,000 sq ft workshop. 200+ craftsmen. Every piece built by hand, no shortcuts.</div></div>
+    <div class="ps-item"><div class="ps-icon"><i class="ti ti-leaf" aria-hidden="true"></i></div><div class="ps-title">Responsibly sourced</div><div class="ps-desc">2 trees planted per tree used. Certified forest partnerships. Carbon neutral by 2027.</div></div>
+    <div class="ps-item"><div class="ps-icon"><i class="ti ti-award" aria-hidden="true"></i></div><div class="ps-title">5-year warranty</div><div class="ps-desc">Every solid wood piece covered against structural defects. We stand behind our craft.</div></div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div class="testi-section">
+    <div class="section-h">What our customers say</div>
+    <div class="testi-grid">
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">"The Oslo sofa completely transformed our living room. Quality is incredible — even better in person. The team assembled it in 20 minutes."</div><div class="testi-name">Ayesha M.</div><div class="testi-city">Lahore · Living room</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">"I ordered a custom bed with my own dimensions and fabric. They sent weekly photos from the workshop. Arrived perfectly. Worth every rupee."</div><div class="testi-name">Bilal K.</div><div class="testi-city">Karachi · Custom order</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">"Bought the walnut dining table. 2 years later it still looks brand new. The sheesham wardrobe we got custom-made is simply stunning."</div><div class="testi-name">Nadia F.</div><div class="testi-city">Islamabad · Dining + Custom</div></div>
+    </div>
+  </div>
+
+  <!-- INSPIRATION -->
+  <div class="inspo-section">
+    <div class="section-h">Design inspiration</div>
+    <div class="inspo-grid">
+      <div class="inspo-card">
+        <div class="inspo-img" style="background:#4A4840;display:flex;align-items:center;justify-content:center;height:200px"><i class="ti ti-sofa" style="font-size:60px;color:rgba(255,255,255,0.2)"></i></div>
+        <div class="inspo-body"><div class="inspo-tag">Living room</div><div class="inspo-title">How to layer textures for a warm, livable space</div></div>
+      </div>
+      <div class="inspo-card">
+        <div class="inspo-img" style="background:#403840;display:flex;align-items:center;justify-content:center;height:200px"><i class="ti ti-bed" style="font-size:60px;color:rgba(255,255,255,0.2)"></i></div>
+        <div class="inspo-body"><div class="inspo-tag">Bedroom</div><div class="inspo-title">5 headboard styles that elevate any bedroom</div></div>
+      </div>
+      <div class="inspo-card" onclick="go('custom')" style="cursor:pointer">
+        <div class="inspo-img" style="background:#3A3A38;display:flex;align-items:center;justify-content:center;height:200px"><i class="ti ti-pencil-star" style="font-size:60px;color:rgba(255,255,255,0.2)"></i></div>
+        <div class="inspo-body"><div class="inspo-tag" style="color:var(--gold)">Custom</div><div class="inspo-title">How to place a custom furniture order — a step-by-step guide</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEWSLETTER -->
+  <div class="newsletter-section">
+    <div class="newsletter-h">Stay in the loop</div>
+    <div class="newsletter-p">New collections, design tips, and exclusive offers — straight to your inbox.</div>
+    <div class="newsletter-row">
+      <input class="newsletter-input" type="email" placeholder="your@email.com">
+      <div class="btn-primary">Subscribe</div>
+    </div>
+  </div>
+
+  <!-- PROMISE -->
+  <div class="promise-section">
+    <div class="promise-item"><div class="promise-icon"><i class="ti ti-truck" aria-hidden="true"></i></div><div class="promise-title">Free delivery</div><div class="promise-desc">On orders above Rs. 30,000</div></div>
+    <div class="promise-item"><div class="promise-icon"><i class="ti ti-shield-check" aria-hidden="true"></i></div><div class="promise-title">5-year warranty</div><div class="promise-desc">All solid wood pieces</div></div>
+    <div class="promise-item"><div class="promise-icon"><i class="ti ti-rotate" aria-hidden="true"></i></div><div class="promise-title">30-day returns</div><div class="promise-desc">Hassle-free, always</div></div>
+    <div class="promise-item"><div class="promise-icon"><i class="ti ti-pencil-star" aria-hidden="true"></i></div><div class="promise-title">Custom orders</div><div class="promise-desc">Built exactly as you want</div></div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div><div class="footer-brand">Maison</div><div class="footer-desc">Premium handcrafted furniture. Designed in Lahore, delivered across Pakistan since 2010.</div><div class="footer-social"><div class="soc-btn"><i class="ti ti-brand-instagram" aria-hidden="true"></i></div><div class="soc-btn"><i class="ti ti-brand-facebook" aria-hidden="true"></i></div><div class="soc-btn"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i></div><div class="soc-btn"><i class="ti ti-brand-linkedin" aria-hidden="true"></i></div><div class="soc-btn"><i class="ti ti-brand-tiktok" aria-hidden="true"></i></div></div></div>
+    <div><div class="footer-head">Shop</div><div class="footer-link" onclick="go('living')">Living room</div><div class="footer-link" onclick="go('bedroom')">Bedroom</div><div class="footer-link" onclick="go('outdoor')">Outdoor</div><div class="footer-link" onclick="go('dining')">Dining</div><div class="footer-link" onclick="go('lighting')">Lighting</div><div class="footer-link" onclick="go('storage')">Storage</div><div class="footer-link" onclick="go('sale')">Sale</div><div class="footer-link" onclick="go('custom')" style="color:var(--gold)">Custom Order</div></div>
+    <div><div class="footer-head">Company</div><div class="footer-link" onclick="go('about')">About us</div><div class="footer-link" onclick="go('showroom')">Showroom</div><div class="footer-link" onclick="go('careers')">Careers</div></div>
+    <div><div class="footer-head">Help</div><div class="footer-link" onclick="go('contact')">Contact</div><div class="footer-link" onclick="go('delivery')">Delivery</div><div class="footer-link" onclick="go('returns')">Returns</div></div>
+  </div>
+  <div class="footer-bottom"><div class="footer-copy">© 2025 Maison. All rights reserved.</div><div class="footer-copy">Made in Lahore, Pakistan</div></div>
+</div>
+
+<!-- ═══ LIVING ROOM ═══ -->
+<div class="page" id="page-living">
+  <div class="back-row" onclick="go('home')"><i class="ti ti-arrow-left" style="font-size:12px"></i> Home</div>
+  <div class="hero-banner" style="background:linear-gradient(135deg,#1C1C1A,#2E2E2B)"><div class="hero-banner-content">
+      <div class="hero-banner-eyebrow">Collections</div>
+      <div class="hero-banner-h">Living room<br>collection</div>
+      <div class="btn-primary" style="display:inline-block" onclick="go('custom')">Custom order →</div>
+    </div>
+  </div>
+  <div class="sidebar-layout">
+    <div class="sidebar">
+      <div><div class="sb-group-title">Category</div><div class="sb-opt" onclick="toggleCb(this)"><div class="cb on"><i class="ti ti-check" style="font-size:9px"></i></div>Sofas</div><div class="sb-opt" onclick="toggleCb(this)"><div class="cb on"><i class="ti ti-check" style="font-size:9px"></i></div>Armchairs</div><div class="sb-opt" onclick="toggleCb(this)"><div class="cb"></div>Coffee tables</div><div class="sb-opt" onclick="toggleCb(this)"><div class="cb"></div>TV units</div><div class="sb-opt" onclick="toggleCb(this)"><div class="cb"></div>Shelving</div></div>
+      <div><div class="sb-group-title">Material</div><div class="sb-opt" onclick="toggleCb(this)"><div class="cb on"><i class="ti ti-check" style="font-size:9px"></i></div>Solid wood</div><div class="sb-opt" onclick="toggleCb(this)"><div class="cb"></div>Cane & rattan</div><div class="sb-opt" onclick="toggleCb(this)"><div class="cb"></div>Upholstered</div><div class="sb-opt" onclick="toggleCb(this)"><div class="cb"></div>Metal frame</div></div>
+      <div><div class="sb-group-title">Colour</div><div class="color-dots"><div class="cdot sel" style="background:#C8B89A" onclick="toggleCdot(this)"></div><div class="cdot" style="background:#7A6A5A" onclick="toggleCdot(this)"></div><div class="cdot" style="background:#2C2C2A" onclick="toggleCdot(this)"></div><div class="cdot" style="background:#D8D0C8" onclick="toggleCdot(this)"></div><div class="cdot" style="background:#4A6741" onclick="toggleCdot(this)"></div><div class="cdot" style="background:#7A9CB8" onclick="toggleCdot(this)"></div></div></div>
+      <div><div class="sb-group-title">Price range</div><div style="font-size:10px;color:var(--hint)">Rs. 10,000 – Rs. 2,00,000</div><div class="range-track"><div class="range-fill"></div></div></div>
+      <div><div class="sb-group-title">Availability</div><div class="sb-opt" onclick="toggleCb(this)"><div class="cb on"><i class="ti ti-check" style="font-size:9px"></i></div>In stock</div><div class="sb-opt" onclick="toggleCb(this)"><div class="cb"></div>Made to order</div></div>
+    </div>
+    <div class="grid-area">
+      <div class="sort-bar"><div class="sort-info">10 products</div><select class="sort-sel"><option>Featured</option><option>Price: low–high</option><option>Price: high–low</option><option>Newest</option></select></div>
+      <div class="pgrid3">
+        <div class="pcard" onclick="prod('Oslo 3-seater sofa','Living room','Rs. 85,000','Rs. 1,00,000','Kiln-dried sheesham, Belgian linen, HR foam. 220×90×80 cm.','https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-new">New</div></div><div class="pinfo"><div class="pname">Oslo 3-seater sofa</div><div class="pcat">Living room</div><div class="pprice-row"><div class="pprice">Rs. 85,000</div><div class="pprice-old">Rs. 1,00,000</div></div></div></div>
+        <div class="pcard" onclick="prod('Kona L-shape sofa','Living room','Rs. 1,20,000','','Corner sectional 5-seater, velvet upholstery, walnut legs. 280×220 cm.','https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div></div><div class="pinfo"><div class="pname">Kona L-shape sofa</div><div class="pcat">Living room</div><div class="pprice-row"><div class="pprice">Rs. 1,20,000</div></div></div></div>
+        <div class="pcard" onclick="prod('Cane armchair','Living room','Rs. 28,000','','Hand-woven cane back, solid oak legs, removable linen cushion. 72×68×82 cm.','https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div></div><div class="pinfo"><div class="pname">Cane armchair</div><div class="pcat">Living room</div><div class="pprice-row"><div class="pprice">Rs. 28,000</div></div></div></div>
+        <div class="pcard" onclick="prod('Nero coffee table','Living room','Rs. 22,000','','Marble top, powder-coated steel frame. 120×60×42 cm.','https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div></div><div class="pinfo"><div class="pname">Nero coffee table</div><div class="pcat">Living room</div><div class="pprice-row"><div class="pprice">Rs. 22,000</div></div></div></div>
+        <div class="pcard" onclick="prod('Alta TV unit','Living room','Rs. 38,500','','Sheesham, 3 drawers, cable management. 160×45×55 cm.','https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div></div><div class="pinfo"><div class="pname">Alta TV unit</div><div class="pcat">Living room</div><div class="pprice-row"><div class="pprice">Rs. 38,500</div></div></div></div>
+        <div class="pcard" onclick="prod('Mila loveseat','Living room','Rs. 52,000','','2-seater compact sofa. Bouclé fabric, solid oak legs. 145×80×80 cm.','https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div></div><div class="pinfo"><div class="pname">Mila loveseat</div><div class="pcat">Living room</div><div class="pprice-row"><div class="pprice">Rs. 52,000</div></div></div></div>
+        <div class="pcard" onclick="prod('Petra bookshelf','Living room','Rs. 32,000','','Solid sheesham, 5-tier open shelving. 90×30×180 cm.','https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-new">New</div></div><div class="pinfo"><div class="pname">Petra bookshelf</div><div class="pcat">Living room</div><div class="pprice-row"><div class="pprice">Rs. 32,000</div></div></div></div>
+        <div class="pcard" onclick="prod('Drift floor lamp','Living room','Rs. 14,500','','Brass-finish arc lamp with marble base. 180 cm height.','https://images.unsplash.com/photo-1513506003901-1e6a35a47413?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div></div><div class="pinfo"><div class="pname">Drift floor lamp</div><div class="pcat">Living room</div><div class="pprice-row"><div class="pprice">Rs. 14,500</div></div></div></div>
+        <div class="pcard" onclick="prod('Haven side table','Living room','Rs. 11,000','Rs. 15,000','Solid walnut, round top. 45×45×52 cm.','https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-sale">−27%</div></div><div class="pinfo"><div class="pname">Haven side table</div><div class="pcat">Living room</div><div class="pprice-row"><div class="pprice">Rs. 11,000</div><div class="pprice-old">Rs. 15,000</div></div></div></div>
+        <div class="pcard" onclick="prod('Como sectional','Living room','Rs. 1,65,000','','Modular 6-piece sectional, bouclé fabric, solid sheesham legs.','https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-new">New</div></div><div class="pinfo"><div class="pname">Como sectional</div><div class="pcat">Living room</div><div class="pprice-row"><div class="pprice">Rs. 1,65,000</div></div></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="collection-custom-cta" onclick="go('custom')" style="cursor:pointer">
+    <div><div class="ccc-eyebrow">Custom design · Living room</div><div class="ccc-h">Want a sofa in your own design?</div><div class="ccc-p">Upload a reference image — choose your fabric, wood type, colour and exact dimensions.</div></div>
+    <div class="btn-gold" onclick="event.stopPropagation();go('custom')">Start custom order →</div>
+  </div>
+</div>
+
+<!-- ═══ BEDROOM ═══ -->
+<div class="page" id="page-bedroom">
+  <div class="back-row" onclick="go('home')"><i class="ti ti-arrow-left" style="font-size:12px"></i> Home</div>
+  <div class="hero-banner" style="background:linear-gradient(135deg,#1C1C1A,#2E2E2B)"><div class="hero-banner-content">
+      <div class="hero-banner-eyebrow">Collections</div>
+      <div class="hero-banner-h">Bedroom<br>collection</div>
+      <div class="btn-primary" style="display:inline-block" onclick="go('custom')">Custom order →</div>
+    </div>
+  </div>
+  <div class="sidebar-layout">
+    <div class="sidebar">
+      <div><div class="sb-group-title">Category</div><div class="sb-opt" onclick="toggleCb(this)"><div class="cb on"><i class="ti ti-check" style="font-size:9px"></i></div>Beds</div><div class="sb-opt" onclick="toggleCb(this)"><div class="cb on"><i class="ti ti-check" style="font-size:9px"></i></div>Wardrobes</div><div class="sb-opt" onclick="toggleCb(this)"><div class="cb"></div>Nightstands</div><div class="sb-opt" onclick="toggleCb(this)"><div class="cb"></div>Dressers</div><div class="sb-opt" onclick="toggleCb(this)"><div class="cb"></div>Benches</div></div>
+      <div><div class="sb-group-title">Material</div><div class="sb-opt" onclick="toggleCb(this)"><div class="cb on"><i class="ti ti-check" style="font-size:9px"></i></div>Solid wood</div><div class="sb-opt" onclick="toggleCb(this)"><div class="cb"></div>Upholstered</div><div class="sb-opt" onclick="toggleCb(this)"><div class="cb"></div>Cane back</div></div>
+      <div><div class="sb-group-title">Colour</div><div class="color-dots"><div class="cdot sel" style="background:#C8B89A" onclick="toggleCdot(this)"></div><div class="cdot" style="background:#7A6A5A" onclick="toggleCdot(this)"></div><div class="cdot" style="background:#2C2C2A" onclick="toggleCdot(this)"></div><div class="cdot" style="background:#D8D0C8" onclick="toggleCdot(this)"></div></div></div>
+      <div><div class="sb-group-title">Price range</div><div style="font-size:10px;color:var(--hint)">Rs. 8,000 – Rs. 1,50,000</div><div class="range-track"><div class="range-fill"></div></div></div>
+    </div>
+    <div class="grid-area">
+      <div class="sort-bar"><div class="sort-info">10 products</div><select class="sort-sel"><option>Featured</option><option>Price: low–high</option><option>Price: high–low</option><option>Newest</option></select></div>
+      <div class="pgrid3">
+        <div class="pcard" onclick="prod('Luma bed frame','Bedroom','Rs. 54,500','Rs. 68,000','Solid sheesham headboard, slatted base. Queen & king. White glove delivery.','https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-sale">−20%</div></div><div class="pinfo"><div class="pname">Luma bed frame</div><div class="pcat">Bedroom</div><div class="pprice-row"><div class="pprice">Rs. 54,500</div><div class="pprice-old">Rs. 68,000</div></div></div></div>
+        <div class="pcard" onclick="prod('Drift wardrobe','Bedroom','Rs. 92,000','','Solid sheesham, soft-close doors, full-length mirror. 200×60×220 cm.','https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-new">New</div></div><div class="pinfo"><div class="pname">Drift wardrobe</div><div class="pcat">Bedroom</div><div class="pprice-row"><div class="pprice">Rs. 92,000</div></div></div></div>
+        <div class="pcard" onclick="prod('Arc nightstand','Bedroom','Rs. 10,150','Rs. 14,500','Curved sheesham. 1 drawer + open shelf. 45×40×55 cm.','https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-sale">−30%</div></div><div class="pinfo"><div class="pname">Arc nightstand</div><div class="pcat">Bedroom</div><div class="pprice-row"><div class="pprice">Rs. 10,150</div><div class="pprice-old">Rs. 14,500</div></div></div></div>
+        <div class="pcard" onclick="prod('Yuki dresser','Bedroom','Rs. 48,000','','5-drawer solid walnut dresser with brass pulls. 110×45×85 cm.','https://images.unsplash.com/photo-1489187514013-7f20a0f24d75?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div></div><div class="pinfo"><div class="pname">Yuki dresser</div><div class="pcat">Bedroom</div><div class="pprice-row"><div class="pprice">Rs. 48,000</div></div></div></div>
+        <div class="pcard" onclick="prod('Miso bench','Bedroom','Rs. 18,500','','Upholstered bedroom bench, sheesham legs. 120×40×46 cm.','https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div></div><div class="pinfo"><div class="pname">Miso bench</div><div class="pcat">Bedroom</div><div class="pprice-row"><div class="pprice">Rs. 18,500</div></div></div></div>
+        <div class="pcard" onclick="prod('Sora platform bed','Bedroom','Rs. 72,000','','Low-profile platform, walnut veneer, no box spring needed. King size.','https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-new">New</div></div><div class="pinfo"><div class="pname">Sora platform bed</div><div class="pcat">Bedroom</div><div class="pprice-row"><div class="pprice">Rs. 72,000</div></div></div></div>
+        <div class="pcard" onclick="prod('Nora vanity table','Bedroom','Rs. 36,000','','Solid sheesham, 3-panel mirror, 4 drawers. 100×45×70 cm.','https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div></div><div class="pinfo"><div class="pname">Nora vanity table</div><div class="pcat">Bedroom</div><div class="pprice-row"><div class="pprice">Rs. 36,000</div></div></div></div>
+        <div class="pcard" onclick="prod('Terra reading chair','Bedroom','Rs. 24,000','','Bouclé lounge chair with ottoman. Solid sheesham legs. Perfect for bedrooms.','https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div></div><div class="pinfo"><div class="pname">Terra reading chair</div><div class="pcat">Bedroom</div><div class="pprice-row"><div class="pprice">Rs. 24,000</div></div></div></div>
+        <div class="pcard" onclick="prod('Crest headboard','Bedroom','Rs. 19,500','Rs. 25,000','Upholstered padded headboard, linen fabric. Queen/King sizes.','https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-sale">−22%</div></div><div class="pinfo"><div class="pname">Crest headboard</div><div class="pcat">Bedroom</div><div class="pprice-row"><div class="pprice">Rs. 19,500</div><div class="pprice-old">Rs. 25,000</div></div></div></div>
+        <div class="pcard" onclick="prod('Luma twin bed','Bedroom','Rs. 38,500','','Solid sheesham twin, slatted base, with pull-out trundle.','https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div></div><div class="pinfo"><div class="pname">Luma twin bed</div><div class="pcat">Bedroom</div><div class="pprice-row"><div class="pprice">Rs. 38,500</div></div></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="collection-custom-cta" onclick="go('custom')" style="cursor:pointer">
+    <div><div class="ccc-eyebrow">Custom design · Bedroom</div><div class="ccc-h">Dream bedroom, your dimensions.</div><div class="ccc-p">Custom beds, wardrobes and complete bedroom sets. Choose your wood, upholstery, and finish.</div></div>
+    <div class="btn-gold" onclick="event.stopPropagation();go('custom')">Start custom order →</div>
+  </div>
+</div>
+
+<!-- ═══ OUTDOOR ═══ -->
+<div class="page" id="page-outdoor">
+  <div class="back-row" onclick="go('home')"><i class="ti ti-arrow-left" style="font-size:12px"></i> Home</div>
+  <div class="hero-banner" style="background:linear-gradient(135deg,#1C1C1A,#2E2E2B)"><div class="hero-banner-content">
+      <div class="hero-banner-eyebrow">Collections</div>
+      <div class="hero-banner-h">Outdoor<br>collection</div>
+      <div class="btn-primary" style="display:inline-block" onclick="go('custom')">Custom order →</div>
+    </div>
+  </div>
+  <div class="sidebar-layout">
+    <div class="sidebar">
+      <div><div class="sb-group-title">Category</div><div class="sb-opt" onclick="toggleCb(this)"><div class="cb on"><i class="ti ti-check" style="font-size:9px"></i></div>Lounge sets</div><div class="sb-opt" onclick="toggleCb(this)"><div class="cb on"><i class="ti ti-check" style="font-size:9px"></i></div>Dining sets</div><div class="sb-opt" onclick="toggleCb(this)"><div class="cb"></div>Chairs</div><div class="sb-opt" onclick="toggleCb(this)"><div class="cb"></div>Planters</div></div>
+      <div><div class="sb-group-title">Material</div><div class="sb-opt" onclick="toggleCb(this)"><div class="cb on"><i class="ti ti-check" style="font-size:9px"></i></div>Teak</div><div class="sb-opt" onclick="toggleCb(this)"><div class="cb"></div>Wicker</div><div class="sb-opt" onclick="toggleCb(this)"><div class="cb"></div>Aluminium</div></div>
+      <div><div class="sb-group-title">Price range</div><div style="font-size:10px;color:var(--hint)">Rs. 8,000 – Rs. 3,00,000</div><div class="range-track"><div class="range-fill"></div></div></div>
+    </div>
+    <div class="grid-area">
+      <div class="sort-bar"><div class="sort-info">10 products</div><select class="sort-sel"><option>Featured</option><option>Price: low–high</option><option>Price: high–low</option><option>Newest</option></select></div>
+      <div class="pgrid3">
+        <div class="pcard" onclick="prod('Bali lounge set','Outdoor','Rs. 1,45,000','','Teak 3-seater + 2 chairs + coffee table. All-weather cushions included.','https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-new">New</div></div><div class="pinfo"><div class="pname">Bali lounge set</div><div class="pcat">Outdoor</div><div class="pprice-row"><div class="pprice">Rs. 1,45,000</div></div></div></div>
+        <div class="pcard" onclick="prod('Teak swing chair','Outdoor','Rs. 38,000','','Hanging swing chair, solid teak, weatherproof rope. Max 120 kg.','https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div></div><div class="pinfo"><div class="pname">Teak swing chair</div><div class="pcat">Outdoor</div><div class="pprice-row"><div class="pprice">Rs. 38,000</div></div></div></div>
+        <div class="pcard" onclick="prod('Garden bistro set','Outdoor','Rs. 28,500','Rs. 36,000','2-chair + round table. Powder-coated aluminium frame.','https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-sale">−21%</div></div><div class="pinfo"><div class="pname">Garden bistro set</div><div class="pcat">Outdoor</div><div class="pprice-row"><div class="pprice">Rs. 28,500</div><div class="pprice-old">Rs. 36,000</div></div></div></div>
+        <div class="pcard" onclick="prod('Deck lounger pair','Outdoor','Rs. 62,000','','2x sun loungers, solid teak, adjustable back. All-weather.','https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div></div><div class="pinfo"><div class="pname">Deck lounger pair</div><div class="pcat">Outdoor</div><div class="pprice-row"><div class="pprice">Rs. 62,000</div></div></div></div>
+        <div class="pcard" onclick="prod('Terrace dining set 6','Outdoor','Rs. 1,10,000','','Solid teak table + 6 chairs. Foldable chairs, weatherproof.','https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-new">New</div></div><div class="pinfo"><div class="pname">Terrace dining set 6</div><div class="pcat">Outdoor</div><div class="pprice-row"><div class="pprice">Rs. 1,10,000</div></div></div></div>
+        <div class="pcard" onclick="prod('Planter box set','Outdoor','Rs. 9,500','','Solid teak planter boxes. Set of 3. 30/40/50 cm cubes.','https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div></div><div class="pinfo"><div class="pname">Planter box set</div><div class="pcat">Outdoor</div><div class="pprice-row"><div class="pprice">Rs. 9,500</div></div></div></div>
+        <div class="pcard" onclick="prod('Rattan sofa set','Outdoor','Rs. 85,000','','Wicker rattan 3-seater + 2 chairs. Olefin cushions. Weather-resistant.','https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div></div><div class="pinfo"><div class="pname">Rattan sofa set</div><div class="pcat">Outdoor</div><div class="pprice-row"><div class="pprice">Rs. 85,000</div></div></div></div>
+        <div class="pcard" onclick="prod('Fold bar stool','Outdoor','Rs. 7,200','Rs. 9,500','Folding bar stool, powder-coated steel. Set of 2.','https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-sale">−24%</div></div><div class="pinfo"><div class="pname">Fold bar stool</div><div class="pcat">Outdoor</div><div class="pprice-row"><div class="pprice">Rs. 7,200</div><div class="pprice-old">Rs. 9,500</div></div></div></div>
+        <div class="pcard" onclick="prod('Pergola bench','Outdoor','Rs. 22,000','','3-seater teak garden bench. 150 cm, with backrest.','https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div></div><div class="pinfo"><div class="pname">Pergola bench</div><div class="pcat">Outdoor</div><div class="pprice-row"><div class="pprice">Rs. 22,000</div></div></div></div>
+        <div class="pcard" onclick="prod('Hammock stand','Outdoor','Rs. 15,500','','Freestanding teak hammock stand with cotton hammock included.','https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-new">New</div></div><div class="pinfo"><div class="pname">Hammock stand</div><div class="pcat">Outdoor</div><div class="pprice-row"><div class="pprice">Rs. 15,500</div></div></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="collection-custom-cta" onclick="go('custom')" style="cursor:pointer">
+    <div><div class="ccc-eyebrow">Custom design · Outdoor</div><div class="ccc-h">Design your perfect outdoor space.</div><div class="ccc-p">Custom outdoor sets in teak, wicker or aluminium. Built to your garden dimensions.</div></div>
+    <div class="btn-gold" onclick="event.stopPropagation();go('custom')">Start custom order →</div>
+  </div>
+</div>
+
+<!-- ═══ SALE ═══ -->
+<div class="page" id="page-sale">
+  <div class="back-row" onclick="go('home')"><i class="ti ti-arrow-left" style="font-size:12px"></i> Home</div>
+  <div class="sale-hero">
+    <div class="sale-eyebrow">Limited time</div>
+    <div class="sale-h1">End of season sale.<br>Up to 40% off.</div>
+    <div class="sale-sub">Selected pieces reduced to clear. While stocks last.</div>
+  </div>
+  <div class="prod-section">
+    <div class="section-row"><div class="section-h">Sale items</div><div class="sort-sel" style="font-size:11px;padding:6px 11px;border:0.5px solid var(--border);border-radius:7px;background:#fff">Sort: Featured</div></div>
+    <div class="pgrid4">
+      <div class="pcard" onclick="prod('Luma bed frame','Bedroom','Rs. 54,500','Rs. 68,000','Solid sheesham headboard, slatted base. Queen & king.','https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-sale">−20%</div></div><div class="pinfo"><div class="pname">Luma bed frame</div><div class="pcat">Bedroom</div><div class="pprice-row"><div class="pprice">Rs. 54,500</div><div class="pprice-old">Rs. 68,000</div></div></div></div>
+      <div class="pcard" onclick="prod('Arc nightstand','Bedroom','Rs. 10,150','Rs. 14,500','Curved sheesham. Last 4 units.','https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-sale">−30%</div></div><div class="pinfo"><div class="pname">Arc nightstand</div><div class="pcat">Bedroom</div><div class="pprice-row"><div class="pprice">Rs. 10,150</div><div class="pprice-old">Rs. 14,500</div></div></div></div>
+      <div class="pcard" onclick="prod('Oslo 3-seater sofa','Living room','Rs. 85,000','Rs. 1,00,000','Kiln-dried sheesham, Belgian linen, HR foam.','https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-sale">−15%</div></div><div class="pinfo"><div class="pname">Oslo 3-seater sofa</div><div class="pcat">Living room</div><div class="pprice-row"><div class="pprice">Rs. 85,000</div><div class="pprice-old">Rs. 1,00,000</div></div></div></div>
+      <div class="pcard" onclick="prod('Garden bistro set','Outdoor','Rs. 28,500','Rs. 36,000','2 chairs + round table. Powder-coated aluminium.','https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-sale">−21%</div></div><div class="pinfo"><div class="pname">Garden bistro set</div><div class="pcat">Outdoor</div><div class="pprice-row"><div class="pprice">Rs. 28,500</div><div class="pprice-old">Rs. 36,000</div></div></div></div>
+      <div class="pcard" onclick="prod('Nero coffee table','Living room','Rs. 16,500','Rs. 22,000','Marble top, powder-coated steel frame.','https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-sale">−25%</div></div><div class="pinfo"><div class="pname">Nero coffee table</div><div class="pcat">Living room</div><div class="pprice-row"><div class="pprice">Rs. 16,500</div><div class="pprice-old">Rs. 22,000</div></div></div></div>
+      <div class="pcard" onclick="prod('Yuki dresser','Bedroom','Rs. 34,500','Rs. 48,000','5-drawer solid walnut dresser with brass pulls.','https://images.unsplash.com/photo-1489187514013-7f20a0f24d75?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-sale">−28%</div></div><div class="pinfo"><div class="pname">Yuki dresser</div><div class="pcat">Bedroom</div><div class="pprice-row"><div class="pprice">Rs. 34,500</div><div class="pprice-old">Rs. 48,000</div></div></div></div>
+      <div class="pcard" onclick="prod('Haven side table','Living room','Rs. 11,000','Rs. 15,000','Solid walnut, round top. 45×45×52 cm.','https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-sale">−27%</div></div><div class="pinfo"><div class="pname">Haven side table</div><div class="pcat">Living room</div><div class="pprice-row"><div class="pprice">Rs. 11,000</div><div class="pprice-old">Rs. 15,000</div></div></div></div>
+      <div class="pcard" onclick="prod('Fold bar stool','Outdoor','Rs. 7,200','Rs. 9,500','Folding bar stool, powder-coated steel. Set of 2.','https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-sale">−24%</div></div><div class="pinfo"><div class="pname">Fold bar stool</div><div class="pcat">Outdoor</div><div class="pprice-row"><div class="pprice">Rs. 7,200</div><div class="pprice-old">Rs. 9,500</div></div></div></div>
+      <div class="pcard" onclick="prod('Crest headboard','Bedroom','Rs. 19,500','Rs. 25,000','Upholstered padded headboard, linen fabric.','https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-sale">−22%</div></div><div class="pinfo"><div class="pname">Crest headboard</div><div class="pcat">Bedroom</div><div class="pprice-row"><div class="pprice">Rs. 19,500</div><div class="pprice-old">Rs. 25,000</div></div></div></div>
+      <div class="pcard" onclick="prod('Miso bench','Bedroom','Rs. 13,500','Rs. 18,500','Upholstered bedroom bench, sheesham legs.','https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-sale">−27%</div></div><div class="pinfo"><div class="pname">Miso bench</div><div class="pcat">Bedroom</div><div class="pprice-row"><div class="pprice">Rs. 13,500</div><div class="pprice-old">Rs. 18,500</div></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PRODUCT DETAIL ═══ -->
+<div class="page" id="page-product">
+  <div class="back-row" id="prod-back-btn"><i class="ti ti-arrow-left" style="font-size:12px"></i> <span id="prod-back-label">Back</span></div>
+  <div class="detail-wrap">
+    <div class="gallery-side">
+      <div class="main-img" id="prod-main-img" style="display:flex;align-items:center;justify-content:center;background:var(--warm)"><i id="prod-main-icon" class="ti ti-armchair" style="font-size:100px;color:var(--stone)"></i></div>
+      <div class="thumbrow">
+        <div class="dthumb sel" onclick="selThumb(this,0)" style="display:flex;align-items:center;justify-content:center;background:var(--warm)"><i class="ti ti-armchair" style="font-size:22px;color:var(--stone)"></i></div>
+        <div class="dthumb" onclick="selThumb(this,1)"><i class="ti ti-armchair" style="font-size:22px;color:var(--stone)"></i></div>
+        <div class="dthumb" onclick="selThumb(this,2)"><i class="ti ti-armchair" style="font-size:22px;color:var(--stone)"></i></div>
+        <div class="dthumb" onclick="selThumb(this,3)"><i class="ti ti-armchair" style="font-size:22px;color:var(--stone)"></i></div>
+      </div>
+    </div>
+    <div class="info-side">
+      <div class="breadcrumb"><i class="ti ti-home" style="font-size:11px"></i> <i class="ti ti-chevron-right" style="font-size:10px"></i> <span id="prod-cat-bc">Category</span> <i class="ti ti-chevron-right" style="font-size:10px"></i> <span id="prod-name">Product</span></div>
+      <div class="dname" id="prod-name-display">Product name</div>
+      <div class="rating-row"><span class="stars">★★★★★</span><span class="rating-text">4.9 · 48 reviews</span></div>
+      <div class="price-row"><div class="dprice" id="prod-price">Rs. 0</div><div class="dprice-old" id="prod-old"></div><div class="discount-tag" id="prod-disc"></div></div>
+      <div>
+        <div class="opt-head">Colour</div>
+        <div class="swatches"><div class="sw sel" style="background:#C8B89A"></div><div class="sw" style="background:#7A6A5A"></div><div class="sw" style="background:#2C2C2A"></div><div class="sw" style="background:#D8D0C8"></div></div>
+      </div>
+      <div>
+        <div class="opt-head">Size</div>
+        <div class="sizes"><div class="sz sel" onclick="selSz(this)">Standard</div><div class="sz" onclick="selSz(this)">Large</div><div class="sz" onclick="selSz(this)">Custom</div></div>
+      </div>
+      <div class="action-row">
+        <div class="add-btn">Add to cart</div>
+        <div class="wish-btn" id="prod-wish" onclick="saveCurrentProd()"><i class="ti ti-heart" aria-hidden="true"></i></div>
+      </div>
+      <div class="trust-row">
+        <div class="trust-item"><i class="ti ti-truck" style="font-size:13px"></i>Free delivery</div>
+        <div class="trust-item"><i class="ti ti-shield-check" style="font-size:13px"></i>5yr warranty</div>
+        <div class="trust-item"><i class="ti ti-rotate" style="font-size:13px"></i>30-day returns</div>
+      </div>
+    </div>
+  </div>
+  <div class="tab-bar" id="ptabs">
+    <div class="tab active" onclick="swTab(0)">Description</div>
+    <div class="tab" onclick="swTab(1)">Specifications</div>
+    <div class="tab" onclick="swTab(2)">Reviews</div>
+    <div class="tab" onclick="swTab(3)">Delivery</div>
+  </div>
+  <div class="tab-body">
+    <div id="tb0"><div class="prose" id="prod-desc"></div></div>
+    <div id="tb1" style="display:none"><div class="spec-grid" id="prod-specs"></div></div>
+    <div id="tb2" style="display:none">
+      <div class="review-card"><div class="rv-row"><div class="rv-name">Ayesha M.</div><div class="rv-date">Dec 2024</div></div><div class="rv-stars">★★★★★</div><div class="prose">Absolutely love the quality. Looks even better in person. Delivery team were professional and assembled everything within 25 minutes.</div></div>
+      <div class="review-card"><div class="rv-row"><div class="rv-name">Omar S.</div><div class="rv-date">Nov 2024</div></div><div class="rv-stars">★★★★★</div><div class="prose">Solid build, beautiful finish. The wood grain is gorgeous. Will definitely be ordering more pieces from Maison.</div></div>
+      <div class="review-card"><div class="rv-row"><div class="rv-name">Sana K.</div><div class="rv-date">Oct 2024</div></div><div class="rv-stars">★★★★☆</div><div class="prose">Great quality overall. Slight delay on delivery but team communicated well. Final product is stunning.</div></div>
+    </div>
+    <div id="tb3" style="display:none"><div class="del-grid" style="padding:0 0 16px"><div class="del-card"><div class="del-icon"><i class="ti ti-truck" aria-hidden="true"></i></div><div class="del-title">Standard</div><div class="del-desc">7–14 business days. Free above Rs. 30,000.</div></div><div class="del-card"><div class="del-icon"><i class="ti ti-star" aria-hidden="true"></i></div><div class="del-title">White glove</div><div class="del-desc">Delivered, assembled. Rs. 3,500 flat.</div></div><div class="del-card"><div class="del-icon"><i class="ti ti-rotate" aria-hidden="true"></i></div><div class="del-title">Returns</div><div class="del-desc">30-day hassle-free. We collect from your door.</div></div></div></div>
+  </div>
+</div>
+
+<!-- ═══ MY COLLECTION ═══ -->
+<div class="page" id="page-collection">
+  <div class="back-row" onclick="go('home')"><i class="ti ti-arrow-left" style="font-size:12px"></i> Home</div>
+  <div class="coll-hero"><div><div class="coll-h">My collection</div><div style="font-size:11px;color:var(--hint);margin-top:4px" id="coll-count">0 saved pieces</div></div><div class="btn-ghost" style="font-size:11px" onclick="clearColl()">Clear all</div></div>
+  <div id="coll-empty" class="empty-state"><div class="empty-icon"><i class="ti ti-heart" aria-hidden="true"></i></div><div class="empty-title">Nothing saved yet</div><div class="empty-sub">Hover any product and tap the heart to save it here.</div><div style="margin-top:16px"><div class="btn-primary" style="display:inline-block" onclick="go('home')">Browse products</div></div></div>
+  <div class="prod-section"><div class="pgrid3" id="coll-grid" style="display:none"></div></div>
+</div>
+
+<!-- ═══ ABOUT ═══ -->
+<div class="page" id="page-about">
+  <div class="back-row" onclick="go('home')"><i class="ti ti-arrow-left" style="font-size:12px"></i> Home</div>
+  <div class="hero-banner" style="background:linear-gradient(135deg,#1C1C1A,#2E2E2B)">
+    <div class="hero-banner-content">
+      <div class="hero-banner-eyebrow">Est. 2010 · Lahore, Pakistan</div>
+      <div class="hero-banner-h">We make furniture<br>worth keeping.</div>
+    </div>
+  </div>
+  <div class="about-hero" style="border-top:none">
+    <div class="about-eyebrow">Our story</div>
+    <div class="about-h1">Built on craft,<br>driven by care.</div>
+    <div class="prose" style="margin-top:8px;max-width:520px">Maison was founded on a simple belief: good furniture should last a lifetime, not a trend cycle. Every piece is made in our Lahore workshop by craftsmen who have spent decades perfecting their trade.</div>
+  </div>
+  <div class="stat-row"><div class="stat"><div class="stat-num">15</div><div class="stat-lbl">Years in craft</div></div><div class="stat"><div class="stat-num">12K+</div><div class="stat-lbl">Homes furnished</div></div><div class="stat"><div class="stat-num">4</div><div class="stat-lbl">Showrooms</div></div><div class="stat"><div class="stat-num">200+</div><div class="stat-lbl">Artisans</div></div></div>
+  <div class="story-grid">
+    <div class="story-img" style="background:linear-gradient(135deg,#8B6914,#5C3D1E);display:flex;align-items:center;justify-content:center"><i class="ti ti-building-factory" style="font-size:80px;color:rgba(255,255,255,0.25)"></i></div>
+    <div class="story-text"><div class="story-h">Our workshop</div><div class="prose">40,000 sq ft in Lahore. We source sheesham and walnut responsibly from certified forests in northern Pakistan. Our process: design → prototype → 3-week curing → hand-finish. No shortcuts.</div></div>
+  </div>
+  <div class="story-grid" style="border-bottom:none">
+    <div class="story-text" style="border-right:0.5px solid var(--border)"><div class="story-h">Sustainability</div><div class="prose">2 trees planted per tree used. 100% recycled packaging. Offcuts donated to local schools and craftsmen. Carbon neutral target: 2027.</div></div>
+    <div class="story-img" style="background:linear-gradient(135deg,#2A5C2A,#3D7A3D);display:flex;align-items:center;justify-content:center"><i class="ti ti-leaf" style="font-size:80px;color:rgba(255,255,255,0.25)"></i></div>
+  </div>
+  <div style="padding:20px 24px 10px;background:var(--cream);border-top:0.5px solid var(--border)"><div class="section-h" style="margin-bottom:12px">Leadership</div></div>
+  <div class="team-grid" style="background:var(--cream)">
+    <div class="team-card"><div class="avatar">AK</div><div class="team-name">Ahmad Karimi</div><div class="team-role">Founder & CEO</div></div>
+    <div class="team-card"><div class="avatar">SA</div><div class="team-name">Sara Ansari</div><div class="team-role">Head of design</div></div>
+    <div class="team-card"><div class="avatar">ZM</div><div class="team-name">Zubair Malik</div><div class="team-role">Head of production</div></div>
+  </div>
+</div>
+
+<!-- ═══ SHOWROOM ═══ -->
+<div class="page" id="page-showroom">
+  <div class="back-row" onclick="go('home')"><i class="ti ti-arrow-left" style="font-size:12px"></i> Home</div>
+  <div class="page-header"><div class="page-eyebrow">Visit us</div><div class="page-h1">Our showrooms</div><div class="page-sub">No appointment needed — our team is on hand for room planning, fabric samples & custom orders</div></div>
+  <div class="sr-grid">
+    <div class="sr-card"><div class="sr-img" style="background:#3D4858;display:flex;align-items:center;justify-content:center"><i class="ti ti-building-store" style="font-size:60px;color:rgba(255,255,255,0.25)"></i></div><div class="sr-body"><div class="sr-city">Lahore — flagship <span class="tag-open">Open now</span></div><div class="sr-addr">14 Main Boulevard, Gulberg III<br>Lahore 54000</div><div class="sr-hours"><i class="ti ti-clock" style="font-size:11px" aria-hidden="true"></i> Mon–Sat 10am–8pm · Sun 12–6pm</div><div class="btn-ghost" style="font-size:10px;padding:7px 16px">Get directions</div></div></div>
+    <div class="sr-card"><div class="sr-img" style="background:#384048;display:flex;align-items:center;justify-content:center"><i class="ti ti-building-store" style="font-size:60px;color:rgba(255,255,255,0.25)"></i></div><div class="sr-body"><div class="sr-city">Karachi</div><div class="sr-addr">Block 7, Clifton<br>Karachi 75600</div><div class="sr-hours"><i class="ti ti-clock" style="font-size:11px" aria-hidden="true"></i> Mon–Sat 10am–8pm · Sun closed</div><div class="btn-ghost" style="font-size:10px;padding:7px 16px">Get directions</div></div></div>
+    <div class="sr-card"><div class="sr-img" style="background:#404048;display:flex;align-items:center;justify-content:center"><i class="ti ti-building-store" style="font-size:60px;color:rgba(255,255,255,0.25)"></i></div><div class="sr-body"><div class="sr-city">Islamabad</div><div class="sr-addr">F-7 Markaz, Jinnah Super<br>Islamabad 44000</div><div class="sr-hours"><i class="ti ti-clock" style="font-size:11px" aria-hidden="true"></i> Mon–Sat 11am–7pm</div><div class="btn-ghost" style="font-size:10px;padding:7px 16px">Get directions</div></div></div>
+    <div class="sr-card"><div class="sr-img" style="background:#483D3D;display:flex;align-items:center;justify-content:center"><i class="ti ti-building-store" style="font-size:60px;color:rgba(255,255,255,0.25)"></i></div><div class="sr-body"><div class="sr-city">Peshawar</div><div class="sr-addr">University Town, Ring Road<br>Peshawar 25000</div><div class="sr-hours"><i class="ti ti-clock" style="font-size:11px" aria-hidden="true"></i> Tue–Sun 10am–7pm</div><div class="btn-ghost" style="font-size:10px;padding:7px 16px">Get directions</div></div></div>
+  </div>
+  <div style="padding:18px 24px;border-top:0.5px solid var(--border);background:#fff;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px"><div><div style="font-size:13px;font-weight:500;color:var(--text)">Book a room planning session</div><div style="font-size:11px;color:var(--hint);margin-top:4px;font-weight:300">Free with any purchase — our designers plan your space in 3D</div></div><div class="btn-primary" onclick="go('contact')">Book now</div></div>
+</div>
+
+<!-- ═══ CAREERS ═══ -->
+<div class="page" id="page-careers">
+  <div class="back-row" onclick="go('home')"><i class="ti ti-arrow-left" style="font-size:12px"></i> Home</div>
+  <div class="about-hero"><div class="about-eyebrow">Careers at Maison</div><div class="about-h1">Build something that lasts.</div><div class="prose" style="margin-top:8px;max-width:440px">We are a team of craftspeople, designers, and builders. If you care about quality and craft, we want to hear from you.</div></div>
+  <div class="stat-row" style="grid-template-columns:repeat(3,1fr)"><div class="stat"><div class="stat-num">200+</div><div class="stat-lbl">Team members</div></div><div class="stat"><div class="stat-num">8</div><div class="stat-lbl">Open roles</div></div><div class="stat"><div class="stat-num">4</div><div class="stat-lbl">Cities</div></div></div>
+  <div class="career-list" style="padding-top:16px">
+    <div style="font-size:12px;font-weight:500;color:var(--text);margin-bottom:12px">Open positions</div>
+    <div class="career-card"><div><div class="career-title">Senior furniture designer</div><div class="career-meta"><span>Lahore</span><span>·</span><span>On-site</span></div></div><div class="career-badge badge-design">Design</div></div>
+    <div class="career-card"><div><div class="career-title">E-commerce manager</div><div class="career-meta"><span>Lahore</span><span>·</span><span>Hybrid</span></div></div><div class="career-badge badge-mkt">Marketing</div></div>
+    <div class="career-card"><div><div class="career-title">Workshop production lead</div><div class="career-meta"><span>Lahore</span><span>·</span><span>On-site</span></div></div><div class="career-badge badge-ops">Operations</div></div>
+    <div class="career-card"><div><div class="career-title">Interior design consultant</div><div class="career-meta"><span>Karachi</span><span>·</span><span>On-site</span></div></div><div class="career-badge badge-design">Design</div></div>
+    <div class="career-card"><div><div class="career-title">Customer experience associate</div><div class="career-meta"><span>Islamabad</span><span>·</span><span>On-site</span></div></div><div class="career-badge badge-support">Support</div></div>
+    <div style="font-size:11px;color:var(--hint);margin-top:12px;font-weight:300">Don't see your role? <span style="color:var(--text)">careers@maison.pk</span></div>
+  </div>
+</div>
+
+<!-- ═══ CONTACT ═══ -->
+<div class="page" id="page-contact">
+  <div class="back-row" onclick="go('home')"><i class="ti ti-arrow-left" style="font-size:12px"></i> Home</div>
+  <div class="page-header"><div class="page-eyebrow">Get in touch</div><div class="page-h1">Contact us</div><div class="page-sub">We reply within 24 hours on all enquiries</div></div>
+  <div class="contact-grid">
+    <div class="contact-form">
+      <div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:16px">Send a message</div>
+      <div class="form-2col"><div><label class="form-label">First name</label><input type="text" class="form-field" placeholder="Ahmad"></div><div><label class="form-label">Last name</label><input type="text" class="form-field" placeholder="Karimi"></div></div>
+      <div class="form-1col"><label class="form-label">Email</label><input type="email" class="form-field" placeholder="you@email.com"></div>
+      <div class="form-1col"><label class="form-label">Phone (optional)</label><input type="text" class="form-field" placeholder="+92 300 0000000"></div>
+      <div class="form-1col"><label class="form-label">Subject</label><select class="form-field"><option>Order enquiry</option><option>Product question</option><option>Custom order</option><option>Return / exchange</option><option>Room planning</option><option>Other</option></select></div>
+      <div class="form-1col"><label class="form-label">Message</label><textarea rows="4" class="form-field" placeholder="How can we help?"></textarea></div>
+      <div class="btn-primary" style="text-align:center;width:100%">Send message</div>
+    </div>
+    <div class="contact-info">
+      <div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:6px">Direct contact</div>
+      <div class="ci-row"><div class="ci-icon"><i class="ti ti-phone" aria-hidden="true"></i></div><div><div class="ci-label">Phone</div><div class="ci-val">+92 42 3456 7890<br>Mon–Sat 9am–6pm</div></div></div>
+      <div class="ci-row"><div class="ci-icon"><i class="ti ti-mail" aria-hidden="true"></i></div><div><div class="ci-label">Email</div><div class="ci-val">hello@maison.pk</div></div></div>
+      <div class="ci-row"><div class="ci-icon"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i></div><div><div class="ci-label">WhatsApp</div><div class="ci-val">+92 300 0000000<br>Quick replies, 9am–8pm</div></div></div>
+      <div class="ci-row"><div class="ci-icon"><i class="ti ti-map-pin" aria-hidden="true"></i></div><div><div class="ci-label">Head office</div><div class="ci-val">14 Main Boulevard, Gulberg III<br>Lahore 54000</div></div></div>
+      <div style="border-top:0.5px solid var(--border);padding-top:14px;margin-top:4px"><div style="font-size:12px;font-weight:500;color:var(--text);margin-bottom:6px">Showroom visit</div><div style="font-size:11px;color:var(--muted);margin-bottom:10px;font-weight:300">Free room planning session with any purchase.</div><div class="btn-ghost" style="font-size:11px;padding:8px 16px" onclick="go('showroom')">See showrooms →</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ DELIVERY ═══ -->
+<div class="page" id="page-delivery">
+  <div class="back-row" onclick="go('home')"><i class="ti ti-arrow-left" style="font-size:12px"></i> Home</div>
+  <div class="page-header"><div class="page-eyebrow">Shipping</div><div class="page-h1">Delivery information</div><div class="page-sub">White glove delivery across Pakistan</div></div>
+  <div class="del-grid">
+    <div class="del-card"><div class="del-icon"><i class="ti ti-truck" aria-hidden="true"></i></div><div class="del-title">Standard delivery</div><div class="del-desc">7–14 business days. Free on orders above Rs. 30,000. Rs. 2,500 below that.</div></div>
+    <div class="del-card"><div class="del-icon"><i class="ti ti-star" aria-hidden="true"></i></div><div class="del-title">White glove delivery</div><div class="del-desc">2-person team delivers, assembles and removes all packaging. Rs. 3,500 flat.</div></div>
+    <div class="del-card"><div class="del-icon"><i class="ti ti-calendar" aria-hidden="true"></i></div><div class="del-title">Scheduled delivery</div><div class="del-desc">Choose your date and 2-hour window. Available in Lahore, Karachi, Islamabad.</div></div>
+  </div>
+  <div class="del-table-wrap">
+    <table class="del-table">
+      <thead><tr><th>City</th><th>Standard</th><th>White glove</th><th>Scheduled</th></tr></thead>
+      <tbody>
+        <tr><td>Lahore</td><td>3–5 days</td><td>5–7 days</td><td>Available</td></tr>
+        <tr><td>Karachi</td><td>5–7 days</td><td>7–10 days</td><td>Available</td></tr>
+        <tr><td>Islamabad</td><td>4–6 days</td><td>6–9 days</td><td>Available</td></tr>
+        <tr><td>Peshawar</td><td>6–9 days</td><td>8–12 days</td><td>Coming soon</td></tr>
+        <tr><td>Other cities</td><td>10–14 days</td><td>Not available</td><td>Not available</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="padding:16px 20px;border-top:0.5px solid var(--border)"><div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:7px">Made-to-order pieces</div><div class="prose">4–8 weeks from confirmation. Weekly WhatsApp updates. Workshop visits welcome at any stage. White glove delivery included in price.</div></div>
+</div>
+
+<!-- ═══ RETURNS ═══ -->
+<div class="page" id="page-returns">
+  <div class="back-row" onclick="go('home')"><i class="ti ti-arrow-left" style="font-size:12px"></i> Home</div>
+  <div class="page-header"><div class="page-eyebrow">Policy</div><div class="page-h1">Returns & exchanges</div><div class="page-sub">30-day hassle-free returns — we collect from your door</div></div>
+  <div class="ret-steps">
+    <div class="ret-step"><div class="ret-num">1</div><div class="ret-title">Contact us</div><div class="ret-desc">Email or WhatsApp us within 30 days. Include your order number.</div></div>
+    <div class="ret-step"><div class="ret-num">2</div><div class="ret-title">We collect</div><div class="ret-desc">Our team collects the item from your address. No packing needed.</div></div>
+    <div class="ret-step"><div class="ret-num">3</div><div class="ret-title">Inspection</div><div class="ret-desc">We inspect the item at our warehouse within 3 business days.</div></div>
+    <div class="ret-step"><div class="ret-num">4</div><div class="ret-title">Refund issued</div><div class="ret-desc">Full refund to your original payment method within 5–7 business days.</div></div>
+  </div>
+  <div style="padding:16px 20px;border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);margin-bottom:16px;background:#fff"><div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:7px">What's not covered</div><div class="prose">Custom-made pieces are non-returnable unless defective. Items showing signs of use or damage beyond normal inspection are not eligible. For defective custom pieces, we will repair or replace at no cost.</div></div>
+  <div style="padding:0 20px 20px"><div class="btn-ghost" onclick="go('contact')" style="display:inline-block">Contact support</div></div>
+</div>
+
+<!-- ═══ CUSTOM ORDER ═══ -->
+<div class="page" id="page-custom">
+  <div class="back-row" onclick="go('home')"><i class="ti ti-arrow-left" style="font-size:12px"></i> Home</div>
+  <div class="page-header"><div class="page-eyebrow">Bespoke · Made to order</div><div class="page-h1">Design your own furniture</div><div class="page-sub">4–8 weeks delivery · built by hand in our Lahore workshop · 5-year warranty</div></div>
+  <div class="custom-form-wrap">
+    <div class="custom-form-main">
+      <div style="margin-bottom:22px">
+        <div style="font-size:14px;font-weight:500;color:var(--text);margin-bottom:4px">Furniture type</div>
+        <div class="section-sub">What would you like us to make?</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
+          <div class="finish-opt sel" onclick="selectType(this,'Sofa')">Sofa</div>
+          <div class="finish-opt" onclick="selectType(this,'Bed')">Bed</div>
+          <div class="finish-opt" onclick="selectType(this,'Wardrobe')">Wardrobe</div>
+          <div class="finish-opt" onclick="selectType(this,'Dining table')">Dining table</div>
+          <div class="finish-opt" onclick="selectType(this,'TV unit')">TV unit</div>
+          <div class="finish-opt" onclick="selectType(this,'Coffee table')">Coffee table</div>
+          <div class="finish-opt" onclick="selectType(this,'Dresser')">Dresser</div>
+          <div class="finish-opt" onclick="selectType(this,'Other')">Other</div>
+        </div>
+      </div>
+      <div style="margin-bottom:22px">
+        <div style="font-size:14px;font-weight:500;color:var(--text);margin-bottom:4px">Reference image (optional)</div>
+        <div class="section-sub">Upload a photo or sketch to help us understand your vision</div>
+        <div class="upload-zone" onclick="document.getElementById('file-inp').click()">
+          <div id="upload-default"><div class="upload-icon"><i class="ti ti-photo-up" aria-hidden="true"></i></div><div class="upload-text">Tap to upload image</div><div class="upload-sub">JPG, PNG, PDF up to 10 MB</div></div>
+          <div class="upload-preview" id="upload-preview"><i class="ti ti-file-check" style="font-size:22px;color:var(--green-text)"></i><span id="uploaded-filename" style="font-size:12px;color:var(--text)"></span></div>
+          <input type="file" id="file-inp" accept="image/*,.pdf" style="display:none" onchange="handleFileUpload(this)">
+        </div>
+      </div>
+      <div style="margin-bottom:22px">
+        <div style="font-size:14px;font-weight:500;color:var(--text);margin-bottom:4px">Wood type</div>
+        <div class="wood-grid">
+          <div class="wood-opt sel" onclick="selectWood(this,'Sheesham')"><div class="wood-swatch" style="background:#8B6914">Sheesham</div><div class="wood-label">Indian Rosewood</div></div>
+          <div class="wood-opt" onclick="selectWood(this,'Walnut')"><div class="wood-swatch" style="background:#5C3D1E">Walnut</div><div class="wood-label">Black Walnut</div></div>
+          <div class="wood-opt" onclick="selectWood(this,'Oak')"><div class="wood-swatch" style="background:#C4943A">Oak</div><div class="wood-label">White Oak</div></div>
+          <div class="wood-opt" onclick="selectWood(this,'Teak')"><div class="wood-swatch" style="background:#3D7A3D">Teak</div><div class="wood-label">Burmese Teak</div></div>
+        </div>
+      </div>
+      <div style="margin-bottom:22px">
+        <div style="font-size:14px;font-weight:500;color:var(--text);margin-bottom:4px">Colour &amp; Texture</div>
+        <div style="font-size:10px;color:var(--hint);margin-bottom:10px">Select a finish to see texture</div>
+        <div class="colour-pick-grid">
+          <div class="cpick-wrap"><div class="cpick sel" style="background:linear-gradient(135deg,#D4C5A9,#C8B89A)" onclick="selectColour(this,'Natural')"></div><div class="cpick-lbl">Natural</div></div>
+          <div class="cpick-wrap"><div class="cpick" style="background:linear-gradient(135deg,#8A7060,#7A6A5A)" onclick="selectColour(this,'Walnut')"></div><div class="cpick-lbl">Walnut</div></div>
+          <div class="cpick-wrap"><div class="cpick" style="background:linear-gradient(135deg,#3C3C3A,#2C2C2A)" onclick="selectColour(this,'Ebony')"></div><div class="cpick-lbl">Ebony</div></div>
+          <div class="cpick-wrap"><div class="cpick" style="background:linear-gradient(135deg,#E0D8D0,#D8D0C8)" onclick="selectColour(this,'Driftwood')"></div><div class="cpick-lbl">Driftwood</div></div>
+          <div class="cpick-wrap"><div class="cpick" style="background:linear-gradient(135deg,#5A7751,#4A6741)" onclick="selectColour(this,'Forest')"></div><div class="cpick-lbl">Forest</div></div>
+          <div class="cpick-wrap"><div class="cpick" style="background:linear-gradient(135deg,#8AACC8,#7A9CB8)" onclick="selectColour(this,'Slate Blue')"></div><div class="cpick-lbl">Slate</div></div>
+          <div class="cpick-wrap"><div class="cpick" style="background:linear-gradient(135deg,#C88C5A,#B87C4A)" onclick="selectColour(this,'Terracotta')"></div><div class="cpick-lbl">Terracotta</div></div>
+          <div class="cpick-wrap"><div class="cpick" style="background:linear-gradient(135deg,#F0E0D0,#E8D8C8)" onclick="selectColour(this,'Cream')"></div><div class="cpick-lbl">Cream</div></div>
+        </div>
+      </div>
+      <div style="margin-bottom:22px">
+        <div style="font-size:14px;font-weight:500;color:var(--text);margin-bottom:4px">Finish</div>
+        <div class="finish-grid" id="finish-opts">
+          <div class="finish-opt sel" onclick="selectFinish(this,'Matte')">Matte</div>
+          <div class="finish-opt" onclick="selectFinish(this,'Satin')">Satin</div>
+          <div class="finish-opt" onclick="selectFinish(this,'Gloss')">Gloss</div>
+          <div class="finish-opt" onclick="selectFinish(this,'Raw oiled')">Raw oiled</div>
+          <div class="finish-opt" onclick="selectFinish(this,'Distressed')">Distressed</div>
+        </div>
+      </div>
+      <div style="margin-bottom:22px">
+        <div style="font-size:14px;font-weight:500;color:var(--text);margin-bottom:4px">Dimensions (cm)</div>
+        <div class="section-sub">Approximate dimensions. We will confirm exact measurements before production.</div>
+        <div class="size-inputs" style="margin-top:10px">
+          <div><label class="form-label">Length</label><input type="number" class="form-field" placeholder="200" id="dim-l" oninput="updateSummary()"></div>
+          <div><label class="form-label">Width</label><input type="number" class="form-field" placeholder="90" id="dim-w" oninput="updateSummary()"></div>
+          <div><label class="form-label">Height</label><input type="number" class="form-field" placeholder="80" id="dim-h" oninput="updateSummary()"></div>
+        </div>
+      </div>
+      <div style="margin-bottom:22px">
+        <div style="font-size:14px;font-weight:500;color:var(--text);margin-bottom:4px">Your details</div>
+        <div class="form-2col"><div><label class="form-label">Name</label><input type="text" class="form-field" placeholder="Your name" id="cust-name"></div><div><label class="form-label">Phone</label><input type="text" class="form-field" placeholder="+92 300..." id="cust-phone"></div></div>
+        <div class="form-1col"><label class="form-label">Email</label><input type="email" class="form-field" placeholder="you@email.com" id="cust-email"></div>
+        <div class="form-2col" style="margin-top:0"><div><label class="form-label">City</label><select class="form-field" id="cust-city" onchange="updateSummary()"><option value="">Select city</option><option>Lahore</option><option>Karachi</option><option>Islamabad</option><option>Peshawar</option><option>Other</option></select></div><div><label class="form-label">Budget (optional)</label><input type="text" class="form-field" placeholder="Rs. 50,000" id="cust-budget" oninput="updateSummary()"></div></div>
+        <div class="form-1col"><label class="form-label">Additional notes</label><textarea rows="3" class="form-field" placeholder="Any special requirements, inspiration notes, or questions..."></textarea></div>
+      </div>
+    </div>
+    <div class="custom-form-side">
+      <div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:12px">Order summary</div>
+      <div class="sum-box">
+        <div class="sum-row"><span class="sum-key">Furniture type</span><span class="sum-val" id="sum-type">Sofa</span></div>
+        <div class="sum-row"><span class="sum-key">Colour</span><span class="sum-val" id="sum-colour">Natural</span></div>
+        <div class="sum-row"><span class="sum-key">Wood</span><span class="sum-val" id="sum-wood">Sheesham</span></div>
+        <div class="sum-row"><span class="sum-key">Finish</span><span class="sum-val" id="sum-finish">Matte</span></div>
+        <div class="sum-row"><span class="sum-key">Dimensions</span><span class="sum-val" id="sum-dims">To be confirmed</span></div>
+        <div class="sum-row"><span class="sum-key">City</span><span class="sum-val" id="sum-city">—</span></div>
+        <div class="sum-row"><span class="sum-key">Budget</span><span class="sum-val" id="sum-budget">Not specified</span></div>
+      </div>
+      <div style="font-size:11px;color:var(--hint);line-height:1.7;margin-bottom:14px;font-weight:300">Our team will review your request within 24 hours and send you a detailed quote with 3D rendering at no charge.</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div class="hiw-step" style="padding:14px"><div style="font-size:11px;font-weight:500;color:var(--text);margin-bottom:4px"><i class="ti ti-check" style="color:var(--green-text)"></i> Free quote within 24 hrs</div><div style="font-size:10px;color:var(--hint);font-weight:300">Includes 3D rendering & material samples</div></div>
+        <div class="hiw-step" style="padding:14px"><div style="font-size:11px;font-weight:500;color:var(--text);margin-bottom:4px"><i class="ti ti-check" style="color:var(--green-text)"></i> 4–8 week production</div><div style="font-size:10px;color:var(--hint);font-weight:300">Weekly WhatsApp updates from workshop</div></div>
+        <div class="hiw-step" style="padding:14px"><div style="font-size:11px;font-weight:500;color:var(--text);margin-bottom:4px"><i class="ti ti-check" style="color:var(--green-text)"></i> 5-year warranty</div><div style="font-size:10px;color:var(--hint);font-weight:300">All custom pieces fully covered</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="submit-section">
+    <div style="font-size:11px;color:var(--muted);font-weight:300">By submitting you agree to be contacted by our design team within 24 hours.</div>
+    <div class="btn-lg" onclick="submitCustomOrder()">Submit custom order →</div>
+  </div>
+</div>
+
+<!-- SUCCESS OVERLAY -->
+<div class="success-overlay" id="success-overlay">
+  <div class="success-card">
+    <div class="success-icon"><i class="ti ti-circle-check" aria-hidden="true"></i></div>
+    <div class="success-h">Order submitted!</div>
+    <div class="success-p">Our design team will review your request and contact you within 24 hours with a detailed quote and 3D rendering.</div>
+    <div class="btn-primary" onclick="document.getElementById('success-overlay').classList.remove('show');go('home')" style="width:100%;text-align:center">Back to home</div>
+  </div>
+</div>
+
+
+<!-- ═══ DINING ═══ -->
+<div class="page" id="page-dining">
+  <div class="back-row" onclick="go('home')"><i class="ti ti-arrow-left" style="font-size:12px"></i> Home</div>
+  <div class="hero-banner" style="background:#1C1C1A">
+    
+    <div class="hero-banner-content">
+      <div class="hero-banner-eyebrow">Collections</div>
+      <div class="hero-banner-h">Dining<br>collection</div>
+      <div class="btn-primary" style="display:inline-block" onclick="go('custom')">Custom order →</div>
+    </div>
+  </div>
+  <div class="sidebar-layout">
+    <div class="sidebar">
+      <div><div class="sb-group-title">Category</div>
+        <div class="sb-opt" onclick="toggleCb(this)"><div class="cb on"><i class="ti ti-check" style="font-size:9px"></i></div>Dining Tables</div>
+        <div class="sb-opt" onclick="toggleCb(this)"><div class="cb on"><i class="ti ti-check" style="font-size:9px"></i></div>Dining Chairs</div>
+        <div class="sb-opt" onclick="toggleCb(this)"><div class="cb"></div>Dining Sets</div>
+        <div class="sb-opt" onclick="toggleCb(this)"><div class="cb"></div>Buffets</div>
+        <div class="sb-opt" onclick="toggleCb(this)"><div class="cb"></div>Bar Stools</div>
+      </div>
+      <div><div class="sb-group-title">Material</div>
+        <div class="sb-opt" onclick="toggleCb(this)"><div class="cb on"><i class="ti ti-check" style="font-size:9px"></i></div>Solid wood</div>
+        <div class="sb-opt" onclick="toggleCb(this)"><div class="cb"></div>Marble top</div>
+        <div class="sb-opt" onclick="toggleCb(this)"><div class="cb"></div>Upholstered</div>
+      </div>
+      <div><div class="sb-group-title">Colour</div><div class="color-dots"><div class="cdot sel" style="background:#C8B89A" onclick="toggleCdot(this)"></div><div class="cdot" style="background:#7A6A5A" onclick="toggleCdot(this)"></div><div class="cdot" style="background:#2C2C2A" onclick="toggleCdot(this)"></div><div class="cdot" style="background:#D8D0C8" onclick="toggleCdot(this)"></div></div></div>
+      <div><div class="sb-group-title">Price range</div><div style="font-size:10px;color:var(--hint)">Rs. 8,000 – Rs. 2,50,000</div><div class="range-track"><div class="range-fill"></div></div></div>
+      <div><div class="sb-group-title">Availability</div><div class="sb-opt" onclick="toggleCb(this)"><div class="cb on"><i class="ti ti-check" style="font-size:9px"></i></div>In stock</div><div class="sb-opt" onclick="toggleCb(this)"><div class="cb"></div>Made to order</div></div>
+    </div>
+    <div class="grid-area">
+      <div class="sort-bar"><div class="sort-info">8 products</div><select class="sort-sel"><option>Featured</option><option>Price: low–high</option><option>Price: high–low</option><option>Newest</option></select></div>
+      <div class="pgrid3">
+        <div class="pcard" onclick="prod('Nori dining table','Dining','Rs. 68,000','','Solid sheesham 6-seater dining table. 180×90×76 cm. Rich grain finish.','https://images.unsplash.com/photo-1617806118233-18e1de247200?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-new">New</div></div><div class="pinfo"><div class="pname">Nori dining table</div><div class="pcat">Dining</div><div class="pprice-row"><div class="pprice">Rs. 68,000</div></div></div></div>
+        <div class="pcard" onclick="prod('Kiso dining chair','Dining','Rs. 12,500','','Solid oak dining chair, woven cane back, foam seat cushion. Set of 2.','https://images.unsplash.com/photo-1581539250439-c96689b516dd?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div></div><div class="pinfo"><div class="pname">Kiso dining chair</div><div class="pcat">Dining</div><div class="pprice-row"><div class="pprice">Rs. 12,500</div></div></div></div>
+        <div class="pcard" onclick="prod('Mori 6-seat set','Dining','Rs. 1,15,000','Rs. 1,40,000','Complete 6-seater: sheesham table + 6 upholstered chairs.','https://images.unsplash.com/photo-1617806118233-18e1de247200?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-sale">−18%</div></div><div class="pinfo"><div class="pname">Mori 6-seat set</div><div class="pcat">Dining</div><div class="pprice-row"><div class="pprice">Rs. 1,15,000</div><div class="pprice-old">Rs. 1,40,000</div></div></div></div>
+        <div class="pcard" onclick="prod('Alto bar stool','Dining','Rs. 9,200','','Counter-height bar stool, walnut finish, padded seat. Set of 2.','https://images.unsplash.com/photo-1503602642458-232111445657?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div></div><div class="pinfo"><div class="pname">Alto bar stool</div><div class="pcat">Dining</div><div class="pprice-row"><div class="pprice">Rs. 9,200</div></div></div></div>
+        <div class="pcard" onclick="prod('Riva buffet sideboard','Dining','Rs. 52,000','','2-door 3-drawer solid sheesham sideboard. 150×45×80 cm.','https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-new">New</div></div><div class="pinfo"><div class="pname">Riva buffet sideboard</div><div class="pcat">Dining</div><div class="pprice-row"><div class="pprice">Rs. 52,000</div></div></div></div>
+        <div class="pcard" onclick="prod('Tama marble table','Dining','Rs. 95,000','','Solid walnut base, Carrara marble top. 6-seater. 180×90×76 cm.','https://images.unsplash.com/photo-1617806118233-18e1de247200?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div></div><div class="pinfo"><div class="pname">Tama marble table</div><div class="pcat">Dining</div><div class="pprice-row"><div class="pprice">Rs. 95,000</div></div></div></div>
+        <div class="pcard" onclick="prod('Hana bench seating','Dining','Rs. 18,000','','160 cm upholstered dining bench. Solid sheesham legs.','https://images.unsplash.com/photo-1581539250439-c96689b516dd?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div></div><div class="pinfo"><div class="pname">Hana bench seating</div><div class="pcat">Dining</div><div class="pprice-row"><div class="pprice">Rs. 18,000</div></div></div></div>
+        <div class="pcard" onclick="prod('Kira extendable table','Dining','Rs. 34,500','Rs. 42,000','Extendable dining table. 4→8 seater. Solid sheesham.','https://images.unsplash.com/photo-1617806118233-18e1de247200?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-sale">−18%</div></div><div class="pinfo"><div class="pname">Kira extendable table</div><div class="pcat">Dining</div><div class="pprice-row"><div class="pprice">Rs. 34,500</div><div class="pprice-old">Rs. 42,000</div></div></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="collection-custom-cta" onclick="go('custom')" style="cursor:pointer">
+    <div><div class="ccc-eyebrow">Custom design · Dining</div><div class="ccc-h">A dining table made for your home.</div><div class="ccc-p">Custom size, wood, finish and leg style. Seats 4 to 12. Built in our Lahore workshop.</div></div>
+    <div class="btn-gold" onclick="event.stopPropagation();go('custom')">Start custom order →</div>
+  </div>
+  <div class="promise-section">
+    <div class="promise-item"><div class="promise-icon"><i class="ti ti-truck" aria-hidden="true"></i></div><div class="promise-title">Free delivery</div><div class="promise-desc">On orders above Rs. 30,000</div></div>
+    <div class="promise-item"><div class="promise-icon"><i class="ti ti-shield-check" aria-hidden="true"></i></div><div class="promise-title">5-year warranty</div><div class="promise-desc">All solid wood pieces</div></div>
+    <div class="promise-item"><div class="promise-icon"><i class="ti ti-rotate" aria-hidden="true"></i></div><div class="promise-title">30-day returns</div><div class="promise-desc">Hassle-free, always</div></div>
+    <div class="promise-item"><div class="promise-icon"><i class="ti ti-pencil-star" aria-hidden="true"></i></div><div class="promise-title">Custom orders</div><div class="promise-desc">Built exactly as you want</div></div>
+  </div>
+  <div class="footer"><div><div class="footer-brand">Maison</div><div class="footer-desc">Premium handcrafted furniture. Designed in Lahore, delivered across Pakistan since 2010.</div><div class="footer-social"><div class="soc-btn"><i class="ti ti-brand-instagram"></i></div><div class="soc-btn"><i class="ti ti-brand-whatsapp"></i></div><div class="soc-btn"><i class="ti ti-brand-linkedin"></i></div><div class="soc-btn"><i class="ti ti-brand-tiktok"></i></div></div></div><div><div class="footer-head">Shop</div><div class="footer-link" onclick="go('living')">Living room</div><div class="footer-link" onclick="go('bedroom')">Bedroom</div><div class="footer-link" onclick="go('dining')">Dining</div><div class="footer-link" onclick="go('lighting')">Lighting</div><div class="footer-link" onclick="go('storage')">Storage</div><div class="footer-link" onclick="go('outdoor')">Outdoor</div><div class="footer-link" onclick="go('sale')">Sale</div></div><div><div class="footer-head">Company</div><div class="footer-link" onclick="go('about')">About us</div><div class="footer-link" onclick="go('showroom')">Showroom</div></div><div><div class="footer-head">Help</div><div class="footer-link" onclick="go('contact')">Contact</div><div class="footer-link" onclick="go('delivery')">Delivery</div></div></div>
+  <div class="footer-bottom"><div class="footer-copy">© 2025 Maison. All rights reserved.</div><div class="footer-copy">Made in Lahore, Pakistan</div></div>
+</div>
+
+<!-- ═══ LIGHTING ═══ -->
+<div class="page" id="page-lighting">
+  <div class="back-row" onclick="go('home')"><i class="ti ti-arrow-left" style="font-size:12px"></i> Home</div>
+  <div class="hero-banner" style="background:#1C1C1A">
+    
+    <div class="hero-banner-content">
+      <div class="hero-banner-eyebrow">Collections</div>
+      <div class="hero-banner-h">Lighting<br>collection</div>
+      <div class="btn-primary" style="display:inline-block" onclick="go('custom')">Custom order →</div>
+    </div>
+  </div>
+  <div class="sidebar-layout">
+    <div class="sidebar">
+      <div><div class="sb-group-title">Category</div>
+        <div class="sb-opt" onclick="toggleCb(this)"><div class="cb on"><i class="ti ti-check" style="font-size:9px"></i></div>Floor Lamps</div>
+        <div class="sb-opt" onclick="toggleCb(this)"><div class="cb on"><i class="ti ti-check" style="font-size:9px"></i></div>Pendant Lights</div>
+        <div class="sb-opt" onclick="toggleCb(this)"><div class="cb"></div>Table Lamps</div>
+        <div class="sb-opt" onclick="toggleCb(this)"><div class="cb"></div>Wall Sconces</div>
+        <div class="sb-opt" onclick="toggleCb(this)"><div class="cb"></div>Chandeliers</div>
+      </div>
+      <div><div class="sb-group-title">Style</div>
+        <div class="sb-opt" onclick="toggleCb(this)"><div class="cb on"><i class="ti ti-check" style="font-size:9px"></i></div>Warm / Ambient</div>
+        <div class="sb-opt" onclick="toggleCb(this)"><div class="cb"></div>Minimal</div>
+        <div class="sb-opt" onclick="toggleCb(this)"><div class="cb"></div>Brass finish</div>
+      </div>
+      <div><div class="sb-group-title">Price range</div><div style="font-size:10px;color:var(--hint)">Rs. 4,500 – Rs. 65,000</div><div class="range-track"><div class="range-fill"></div></div></div>
+      <div><div class="sb-group-title">Availability</div><div class="sb-opt" onclick="toggleCb(this)"><div class="cb on"><i class="ti ti-check" style="font-size:9px"></i></div>In stock</div><div class="sb-opt" onclick="toggleCb(this)"><div class="cb"></div>Made to order</div></div>
+    </div>
+    <div class="grid-area">
+      <div class="sort-bar"><div class="sort-info">7 products</div><select class="sort-sel"><option>Featured</option><option>Price: low–high</option><option>Price: high–low</option><option>Newest</option></select></div>
+      <div class="pgrid3">
+        <div class="pcard" onclick="prod('Drift floor lamp','Lighting','Rs. 14,500','','Brass-finish arc lamp with marble base. 180 cm height. E27 bulb.','https://images.unsplash.com/photo-1513506003901-1e6a35a47413?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-new">New</div></div><div class="pinfo"><div class="pname">Drift floor lamp</div><div class="pcat">Lighting</div><div class="pprice-row"><div class="pprice">Rs. 14,500</div></div></div></div>
+        <div class="pcard" onclick="prod('Rattan pendant','Lighting','Rs. 8,500','','Hand-woven rattan pendant. E27 socket. 45 cm diameter.','https://images.unsplash.com/photo-1513506003901-1e6a35a47413?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div></div><div class="pinfo"><div class="pname">Rattan pendant</div><div class="pcat">Lighting</div><div class="pprice-row"><div class="pprice">Rs. 8,500</div></div></div></div>
+        <div class="pcard" onclick="prod('Brass table lamp','Lighting','Rs. 6,200','Rs. 8,000','Brass-finish table lamp, linen shade. H 55 cm.','https://images.unsplash.com/photo-1513506003901-1e6a35a47413?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-sale">−22%</div></div><div class="pinfo"><div class="pname">Brass table lamp</div><div class="pcat">Lighting</div><div class="pprice-row"><div class="pprice">Rs. 6,200</div><div class="pprice-old">Rs. 8,000</div></div></div></div>
+        <div class="pcard" onclick="prod('Sputnik chandelier','Lighting','Rs. 38,000','','8-arm sputnik ceiling light. Brushed gold. 70 cm span.','https://images.unsplash.com/photo-1513506003901-1e6a35a47413?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-new">New</div></div><div class="pinfo"><div class="pname">Sputnik chandelier</div><div class="pcat">Lighting</div><div class="pprice-row"><div class="pprice">Rs. 38,000</div></div></div></div>
+        <div class="pcard" onclick="prod('Wall sconce pair','Lighting','Rs. 9,800','','Set of 2 brass wall sconces. Directional arm. H 28 cm.','https://images.unsplash.com/photo-1513506003901-1e6a35a47413?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div></div><div class="pinfo"><div class="pname">Wall sconce pair</div><div class="pcat">Lighting</div><div class="pprice-row"><div class="pprice">Rs. 9,800</div></div></div></div>
+        <div class="pcard" onclick="prod('Jute drum pendant','Lighting','Rs. 5,500','','Natural jute drum shade. 40 cm diameter. Warm ambient light.','https://images.unsplash.com/photo-1513506003901-1e6a35a47413?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div></div><div class="pinfo"><div class="pname">Jute drum pendant</div><div class="pcat">Lighting</div><div class="pprice-row"><div class="pprice">Rs. 5,500</div></div></div></div>
+        <div class="pcard" onclick="prod('Marble base lamp set','Lighting','Rs. 18,500','','Pair of marble base table lamps, linen shades. H 60 cm.','https://images.unsplash.com/photo-1513506003901-1e6a35a47413?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div></div><div class="pinfo"><div class="pname">Marble base lamp set</div><div class="pcat">Lighting</div><div class="pprice-row"><div class="pprice">Rs. 18,500</div></div></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="collection-custom-cta" onclick="go('custom')" style="cursor:pointer">
+    <div><div class="ccc-eyebrow">Custom design · Lighting</div><div class="ccc-h">Light your space, your way.</div><div class="ccc-p">Custom lampshades, chandeliers and floor lamps. Any size, finish or material.</div></div>
+    <div class="btn-gold" onclick="event.stopPropagation();go('custom')">Start custom order →</div>
+  </div>
+  <div class="promise-section"><div class="promise-item"><div class="promise-icon"><i class="ti ti-truck"></i></div><div class="promise-title">Free delivery</div><div class="promise-desc">On orders above Rs. 30,000</div></div><div class="promise-item"><div class="promise-icon"><i class="ti ti-shield-check"></i></div><div class="promise-title">5-year warranty</div><div class="promise-desc">All solid pieces</div></div><div class="promise-item"><div class="promise-icon"><i class="ti ti-rotate"></i></div><div class="promise-title">30-day returns</div><div class="promise-desc">Hassle-free, always</div></div><div class="promise-item"><div class="promise-icon"><i class="ti ti-pencil-star"></i></div><div class="promise-title">Custom orders</div><div class="promise-desc">Built as you want</div></div></div>
+  <div class="footer"><div><div class="footer-brand">Maison</div><div class="footer-desc">Premium handcrafted furniture since 2010.</div><div class="footer-social"><div class="soc-btn"><i class="ti ti-brand-instagram"></i></div><div class="soc-btn"><i class="ti ti-brand-whatsapp"></i></div><div class="soc-btn"><i class="ti ti-brand-linkedin"></i></div><div class="soc-btn"><i class="ti ti-brand-tiktok"></i></div></div></div><div><div class="footer-head">Shop</div><div class="footer-link" onclick="go('living')">Living room</div><div class="footer-link" onclick="go('bedroom')">Bedroom</div><div class="footer-link" onclick="go('dining')">Dining</div><div class="footer-link" onclick="go('lighting')">Lighting</div><div class="footer-link" onclick="go('storage')">Storage</div><div class="footer-link" onclick="go('outdoor')">Outdoor</div></div><div><div class="footer-head">Company</div><div class="footer-link" onclick="go('about')">About</div><div class="footer-link" onclick="go('showroom')">Showroom</div></div><div><div class="footer-head">Help</div><div class="footer-link" onclick="go('contact')">Contact</div></div></div>
+  <div class="footer-bottom"><div class="footer-copy">© 2025 Maison. All rights reserved.</div><div class="footer-copy">Made in Lahore, Pakistan</div></div>
+</div>
+
+<!-- ═══ STORAGE ═══ -->
+<div class="page" id="page-storage">
+  <div class="back-row" onclick="go('home')"><i class="ti ti-arrow-left" style="font-size:12px"></i> Home</div>
+  <div class="hero-banner" style="background:#1C1C1A">
+    
+    <div class="hero-banner-content">
+      <div class="hero-banner-eyebrow">Collections</div>
+      <div class="hero-banner-h">Storage<br>collection</div>
+      <div class="btn-primary" style="display:inline-block" onclick="go('custom')">Custom order →</div>
+    </div>
+  </div>
+  <div class="sidebar-layout">
+    <div class="sidebar">
+      <div><div class="sb-group-title">Category</div>
+        <div class="sb-opt" onclick="toggleCb(this)"><div class="cb on"><i class="ti ti-check" style="font-size:9px"></i></div>Wardrobes</div>
+        <div class="sb-opt" onclick="toggleCb(this)"><div class="cb on"><i class="ti ti-check" style="font-size:9px"></i></div>Bookshelves</div>
+        <div class="sb-opt" onclick="toggleCb(this)"><div class="cb"></div>Cabinets</div>
+        <div class="sb-opt" onclick="toggleCb(this)"><div class="cb"></div>Chests</div>
+        <div class="sb-opt" onclick="toggleCb(this)"><div class="cb"></div>TV Units</div>
+      </div>
+      <div><div class="sb-group-title">Material</div>
+        <div class="sb-opt" onclick="toggleCb(this)"><div class="cb on"><i class="ti ti-check" style="font-size:9px"></i></div>Solid wood</div>
+        <div class="sb-opt" onclick="toggleCb(this)"><div class="cb"></div>Cane front</div>
+        <div class="sb-opt" onclick="toggleCb(this)"><div class="cb"></div>Glass doors</div>
+      </div>
+      <div><div class="sb-group-title">Colour</div><div class="color-dots"><div class="cdot sel" style="background:#C8B89A" onclick="toggleCdot(this)"></div><div class="cdot" style="background:#7A6A5A" onclick="toggleCdot(this)"></div><div class="cdot" style="background:#2C2C2A" onclick="toggleCdot(this)"></div></div></div>
+      <div><div class="sb-group-title">Price range</div><div style="font-size:10px;color:var(--hint)">Rs. 15,000 – Rs. 2,00,000</div><div class="range-track"><div class="range-fill"></div></div></div>
+      <div><div class="sb-group-title">Availability</div><div class="sb-opt" onclick="toggleCb(this)"><div class="cb on"><i class="ti ti-check" style="font-size:9px"></i></div>In stock</div><div class="sb-opt" onclick="toggleCb(this)"><div class="cb"></div>Made to order</div></div>
+    </div>
+    <div class="grid-area">
+      <div class="sort-bar"><div class="sort-info">7 products</div><select class="sort-sel"><option>Featured</option><option>Price: low–high</option><option>Price: high–low</option><option>Newest</option></select></div>
+      <div class="pgrid3">
+        <div class="pcard" onclick="prod('Drift wardrobe','Storage','Rs. 92,000','','Solid sheesham, soft-close doors, full-length mirror. 200×60×220 cm.','https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-new">New</div></div><div class="pinfo"><div class="pname">Drift wardrobe</div><div class="pcat">Storage</div><div class="pprice-row"><div class="pprice">Rs. 92,000</div></div></div></div>
+        <div class="pcard" onclick="prod('Petra bookshelf','Storage','Rs. 32,000','','Solid sheesham, 5-tier open shelving. 90×30×180 cm.','https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div></div><div class="pinfo"><div class="pname">Petra bookshelf</div><div class="pcat">Storage</div><div class="pprice-row"><div class="pprice">Rs. 32,000</div></div></div></div>
+        <div class="pcard" onclick="prod('Cane cabinet 2-door','Storage','Rs. 42,000','','Solid sheesham frame, cane-weave door panels. 80×40×120 cm.','https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-new">New</div></div><div class="pinfo"><div class="pname">Cane cabinet 2-door</div><div class="pcat">Storage</div><div class="pprice-row"><div class="pprice">Rs. 42,000</div></div></div></div>
+        <div class="pcard" onclick="prod('Alta TV unit','Storage','Rs. 38,500','','Sheesham, 3 drawers, cable management. 160×45×55 cm.','https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div></div><div class="pinfo"><div class="pname">Alta TV unit</div><div class="pcat">Storage</div><div class="pprice-row"><div class="pprice">Rs. 38,500</div></div></div></div>
+        <div class="pcard" onclick="prod('Kura storage chest','Storage','Rs. 22,000','Rs. 28,000','Solid walnut storage chest. 3 drawers + lid. 90×45×60 cm.','https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-sale">−21%</div></div><div class="pinfo"><div class="pname">Kura storage chest</div><div class="pcat">Storage</div><div class="pprice-row"><div class="pprice">Rs. 22,000</div><div class="pprice-old">Rs. 28,000</div></div></div></div>
+        <div class="pcard" onclick="prod('Open wall shelving','Storage','Rs. 18,000','','Modular wall-mounted sheesham shelf system. 3 shelves, 120 cm wide.','https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div></div><div class="pinfo"><div class="pname">Open wall shelving</div><div class="pcat">Storage</div><div class="pprice-row"><div class="pprice">Rs. 18,000</div></div></div></div>
+        <div class="pcard" onclick="prod('Yuki dresser','Storage','Rs. 48,000','','5-drawer solid walnut dresser with brass pulls. 110×45×85 cm.','https://images.unsplash.com/photo-1489187514013-7f20a0f24d75?w=600&q=80')"><div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div></div><div class="pinfo"><div class="pname">Yuki dresser</div><div class="pcat">Storage</div><div class="pprice-row"><div class="pprice">Rs. 48,000</div></div></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="collection-custom-cta" onclick="go('custom')" style="cursor:pointer">
+    <div><div class="ccc-eyebrow">Custom design · Storage</div><div class="ccc-h">Storage that fits your space perfectly.</div><div class="ccc-p">Custom wardrobes, shelving and cabinets. Any dimension, wood type or finish.</div></div>
+    <div class="btn-gold" onclick="event.stopPropagation();go('custom')">Start custom order →</div>
+  </div>
+  <div class="promise-section"><div class="promise-item"><div class="promise-icon"><i class="ti ti-truck"></i></div><div class="promise-title">Free delivery</div><div class="promise-desc">On orders above Rs. 30,000</div></div><div class="promise-item"><div class="promise-icon"><i class="ti ti-shield-check"></i></div><div class="promise-title">5-year warranty</div><div class="promise-desc">All solid pieces</div></div><div class="promise-item"><div class="promise-icon"><i class="ti ti-rotate"></i></div><div class="promise-title">30-day returns</div><div class="promise-desc">Hassle-free, always</div></div><div class="promise-item"><div class="promise-icon"><i class="ti ti-pencil-star"></i></div><div class="promise-title">Custom orders</div><div class="promise-desc">Built as you want</div></div></div>
+  <div class="footer"><div><div class="footer-brand">Maison</div><div class="footer-desc">Premium handcrafted furniture since 2010.</div><div class="footer-social"><div class="soc-btn"><i class="ti ti-brand-instagram"></i></div><div class="soc-btn"><i class="ti ti-brand-whatsapp"></i></div><div class="soc-btn"><i class="ti ti-brand-linkedin"></i></div><div class="soc-btn"><i class="ti ti-brand-tiktok"></i></div></div></div><div><div class="footer-head">Shop</div><div class="footer-link" onclick="go('living')">Living room</div><div class="footer-link" onclick="go('bedroom')">Bedroom</div><div class="footer-link" onclick="go('dining')">Dining</div><div class="footer-link" onclick="go('lighting')">Lighting</div><div class="footer-link" onclick="go('storage')">Storage</div><div class="footer-link" onclick="go('outdoor')">Outdoor</div></div><div><div class="footer-head">Company</div><div class="footer-link" onclick="go('about')">About</div><div class="footer-link" onclick="go('showroom')">Showroom</div></div><div><div class="footer-head">Help</div><div class="footer-link" onclick="go('contact')">Contact</div></div></div>
+  <div class="footer-bottom"><div class="footer-copy">© 2025 Maison. All rights reserved.</div><div class="footer-copy">Made in Lahore, Pakistan</div></div>
+</div>
+
+<!-- SEARCH OVERLAY -->
+<div class="srch-overlay" id="srch-overlay">
+  <div class="srch-box" id="srch-box">
+    <div class="srch-row">
+      <i class="ti ti-search" style="font-size:15px;color:var(--hint)"></i>
+      <input class="srch-input" id="srch-input" type="text" placeholder="Search sofas, beds, dining tables…" autocomplete="off">
+      <div class="srch-close" onclick="closeSearch()"><i class="ti ti-x"></i></div>
+    </div>
+    <div class="srch-tags">
+      <div class="srch-tag" onclick="quickSearch('sofa')">Sofa</div>
+      <div class="srch-tag" onclick="quickSearch('bed')">Bed</div>
+      <div class="srch-tag" onclick="quickSearch('dining')">Dining</div>
+      <div class="srch-tag" onclick="quickSearch('wardrobe')">Wardrobe</div>
+      <div class="srch-tag" onclick="quickSearch('lamp')">Lamp</div>
+      <div class="srch-tag" onclick="quickSearch('cabinet')">Cabinet</div>
+    </div>
+    <div id="srch-results" class="srch-results"></div>
+  </div>
+</div>
+
+<!-- GLASS FLOATING NAV -->
+<div class="glass-nav" id="glass-nav">
+  <div class="glass-popup" id="glass-popup">
+    <div class="gp-item" onclick="go('living');closeGlassPopup()">🛋 Living Room</div>
+    <div class="gp-item" onclick="go('bedroom');closeGlassPopup()">🛏 Bedroom</div>
+    <div class="gp-item" onclick="go('dining');closeGlassPopup()">🍽 Dining</div>
+    <div class="gp-item" onclick="go('lighting');closeGlassPopup()">💡 Lighting</div>
+    <div class="gp-item" onclick="go('storage');closeGlassPopup()">🗄 Storage</div>
+    <div class="gp-item" onclick="go('outdoor');closeGlassPopup()">🌿 Outdoor</div>
+    <div class="gp-item" onclick="go('custom');closeGlassPopup()" style="color:var(--gold);font-weight:500">✦ Custom Order</div>
+  </div>
+  <div class="glass-nav-btn" onclick="toggleGlassPopup()">
+    <div class="glass-nav-dots"><div class="glass-dot"></div><div class="glass-dot"></div><div class="glass-dot"></div></div>
+    <div class="glass-nav-lbl">Browse Rooms</div>
+    <i class="ti ti-chevron-up" style="font-size:12px;color:var(--muted)"></i>
+  </div>
+</div>
+
+</div><!-- end .site -->
+
+<script>
+var cur='home', prev='home', curProd={}, coll=[];
+
+function go(page){
+  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active')});
+  var el=document.getElementById('page-'+page);
+  if(el){el.classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
+  cur=page;
+  var gn=document.getElementById('glass-nav');
+  if(gn){
+    var gp=['living','bedroom','outdoor','dining','lighting','storage','product','custom'];
+    if(gp.indexOf(page)!==-1)gn.classList.add('show');
+    else{gn.classList.remove('show');closeGlassPopup();}
+  }
+}
+
+// THUMB GALLERY
+var thumbImgs=[];
+function selThumb(el,idx){
+  document.querySelectorAll('.dthumb').forEach(function(d){d.classList.remove('sel')});
+  el.classList.add('sel');
+  var main=document.getElementById('prod-main-photo');
+  if(main&&thumbImgs[idx])main.src=thumbImgs[idx];
+}
+function selSz(el){
+  document.querySelectorAll('.sz').forEach(function(s){s.classList.remove('sel')});
+  el.classList.add('sel');
+}
+
+function prod(name,cat,price,old,desc,imgUrl){
+  prev=cur; curProd={name:name,cat:cat,price:price,old:old,desc:desc,img:imgUrl||''};
+
+  // Set text
+  document.getElementById('prod-name').textContent=name;
+  document.getElementById('prod-name-display').textContent=name;
+  document.getElementById('prod-cat-bc').textContent=cat;
+  document.getElementById('prod-price').textContent=price;
+  document.getElementById('prod-old').textContent=old||'';
+  var disc=document.getElementById('prod-disc');
+  if(old){var pn=parseInt(price.replace(/\D/g,'')),po=parseInt(old.replace(/\D/g,''));disc.textContent='-'+Math.round((1-pn/po)*100)+'%';disc.className='discount-tag';}
+  else{disc.textContent='';}
+  document.getElementById('prod-desc').textContent=desc;
+  document.getElementById('prod-back-label').textContent=cat;
+  document.getElementById('prod-back-btn').onclick=function(){go(prev)};
+  document.getElementById('prod-wish').innerHTML='<i class="ti ti-heart" aria-hidden="true"></i>';
+
+  // Set images
+  var imgArr=[imgUrl,imgUrl,imgUrl,imgUrl];
+  thumbImgs=imgArr;
+  var mainPhoto=document.getElementById('prod-main-photo');
+  if(mainPhoto&&imgUrl)mainPhoto.src=imgUrl;
+  ['dthumb0','dthumb1','dthumb2','dthumb3'].forEach(function(id,i){
+    var el=document.getElementById(id);
+    if(el&&imgArr[i])el.src=imgArr[i];
+  });
+  document.querySelectorAll('.dthumb').forEach(function(d,i){d.classList.toggle('sel',i===0)});
+
+  // Specs
+  var specs=[['Category',cat],['Price',price],['Warranty','5 years'],['Delivery','5–14 days'],['Assembly','White glove'],['Material','Solid wood / Natural']];
+  document.getElementById('prod-specs').innerHTML=specs.map(function(s){return'<div class="spec-item"><div class="spec-k">'+s[0]+'</div><div class="spec-v">'+s[1]+'</div></div>';}).join('');
+
+  // Reset tabs
+  document.querySelectorAll('#ptabs .tab').forEach(function(t,i){t.classList.toggle('active',i===0)});
+  ['tb0','tb1','tb2','tb3'].forEach(function(id,i){document.getElementById(id).style.display=i===0?'block':'none';});
+
+  go('product');
+}
+
+function swTab(idx){
+  document.querySelectorAll('#ptabs .tab').forEach(function(t,i){t.classList.toggle('active',i===idx)});
+  ['tb0','tb1','tb2','tb3'].forEach(function(id,i){document.getElementById(id).style.display=i===idx?'block':'none';});
+}
+
+function saveCurrentProd(){
+  saveItem(curProd.name,curProd.cat,curProd.price,curProd.old,curProd.desc,curProd.img);
+  document.getElementById('prod-wish').innerHTML='<i class="ti ti-heart" style="color:#D85A30" aria-hidden="true"></i>';
+}
+
+function saveItem(name,cat,price,old,desc,img){
+  if(!coll.some(function(c){return c.name===name;})){coll.push({name:name,cat:cat,price:price,old:old,desc:desc,img:img||''});updateColl();}
+}
+
+function clearColl(){coll=[];updateColl();}
+
+function updateColl(){
+  var n=coll.length;
+  document.getElementById('coll-count').textContent=n+' saved piece'+(n!==1?'s':'');
+  document.getElementById('coll-empty').style.display=n===0?'block':'none';
+  var g=document.getElementById('coll-grid');g.style.display=n===0?'none':'grid';
+  g.innerHTML=coll.map(function(p){
+    var iconHtml='<div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div>';
+    return'<div class="pcard" onclick="prod(\''+p.name+'\',\''+p.cat+'\',\''+p.price+'\',\''+p.old+'\',\''+p.desc.replace(/'/g,"\\'")+'\',\''+p.img+'\')">'
+    +'<div class="pthumb">'+iconHtml+'</div>'
+    +'<div class="pinfo"><div class="pname">'+p.name+'</div><div class="pcat">'+p.cat+'</div>'
+    +'<div class="pprice-row"><div class="pprice">'+p.price+'</div>'+(p.old?'<div class="pprice-old">'+p.old+'</div>':'')+'</div></div></div>';
+  }).join('');
+}
+
+// CUSTOM ORDER
+var customState={type:'Sofa',colour:'Natural',wood:'Sheesham',finish:'Matte'};
+
+function selectType(el,val){
+  document.querySelectorAll('.page#page-custom .finish-opt:not(#finish-opts .finish-opt)').forEach(function(b){b.classList.remove('sel')});
+  el.classList.add('sel');customState.type=val;updateSummary();
+}
+function selectColour(el,val){
+  document.querySelectorAll('.cpick').forEach(function(b){b.classList.remove('sel')});
+  el.classList.add('sel');customState.colour=val;updateSummary();
+}
+function selectWood(el,val){
+  document.querySelectorAll('.wood-opt').forEach(function(b){b.classList.remove('sel')});
+  el.classList.add('sel');customState.wood=val;updateSummary();
+}
+function selectFinish(el,val){
+  document.querySelectorAll('#finish-opts .finish-opt').forEach(function(b){b.classList.remove('sel')});
+  el.classList.add('sel');customState.finish=val;updateSummary();
+}
+function updateSummary(){
+  document.getElementById('sum-type').textContent=customState.type||'—';
+  document.getElementById('sum-colour').textContent=customState.colour||'—';
+  document.getElementById('sum-wood').textContent=customState.wood||'—';
+  document.getElementById('sum-finish').textContent=customState.finish||'—';
+  var l=document.getElementById('dim-l').value,w=document.getElementById('dim-w').value,h=document.getElementById('dim-h').value;
+  document.getElementById('sum-dims').textContent=(l&&w&&h)?(l+'×'+w+'×'+h+' cm'):'To be confirmed';
+  var city=document.getElementById('cust-city').value;
+  document.getElementById('sum-city').textContent=city||'—';
+  var budget=document.getElementById('cust-budget').value;
+  document.getElementById('sum-budget').textContent=budget||'Not specified';
+}
+function handleFileUpload(input){
+  if(input.files&&input.files[0]){
+    var f=input.files[0];
+    document.getElementById('upload-default').style.display='none';
+    document.getElementById('upload-preview').style.display='flex';
+    document.getElementById('uploaded-filename').textContent=f.name;
+  }
+}
+function submitCustomOrder(){
+  var name=document.getElementById('cust-name').value;
+  var phone=document.getElementById('cust-phone').value;
+  if(!name||!phone){alert('Please fill in your name and phone number to continue.');return;}
+  document.getElementById('success-overlay').classList.add('show');
+}
+
+// MOBILE MENU
+function openMobMenu(){document.getElementById('mob-drawer').classList.add('open');document.body.style.overflow='hidden';}
+function closeMobMenu(){document.getElementById('mob-drawer').classList.remove('open');document.body.style.overflow='';}
+function closeMobMenuOutside(e){if(e.target===document.getElementById('mob-drawer'))closeMobMenu();}
+function mobGo(page){closeMobMenu();setTimeout(function(){go(page);},160);}
+function goCustom(){go('custom');}
+
+// Touch listeners
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('[onclick]').forEach(function(el){
+    if(el._t)return;el._t=1;
+    el.addEventListener('touchstart',function(){},{passive:true});
+  });
+});
+
+// ── CHECKBOX TOGGLE ──
+function toggleCb(el){
+  var cb=el.querySelector('.cb');
+  if(!cb)return;
+  if(cb.classList.contains('on')){
+    cb.classList.remove('on');
+    cb.innerHTML='';
+  } else {
+    cb.classList.add('on');
+    cb.innerHTML='<i class="ti ti-check" style="font-size:9px"></i>';
+  }
+}
+
+// ── COLOUR DOT TOGGLE ──
+function toggleCdot(el){el.classList.toggle('sel');}
+
+// ── NAV DROPDOWN ──
+function toggleNavDd(){
+  var m=document.getElementById('nav-dd-menu');
+  if(m)m.style.display=m.style.display==='block'?'none':'block';
+}
+function closeNavDd(){
+  var m=document.getElementById('nav-dd-menu');
+  if(m)m.style.display='none';
+}
+document.addEventListener('click',function(e){
+  var w=document.getElementById('nav-collections');
+  if(w&&!w.contains(e.target))closeNavDd();
+});
+
+// ── SEARCH ──
+var srchProducts=[
+  {n:'Oslo 3-seater sofa',c:'Living room',p:'Rs. 85,000',i:'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=80&q=60'},
+  {n:'Kona L-shape sofa',c:'Living room',p:'Rs. 1,20,000',i:'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=80&q=60'},
+  {n:'Cane armchair',c:'Living room',p:'Rs. 28,000',i:'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=80&q=60'},
+  {n:'Nero coffee table',c:'Living room',p:'Rs. 22,000',i:'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=80&q=60'},
+  {n:'Alta TV unit',c:'Living room',p:'Rs. 38,500',i:'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=80&q=60'},
+  {n:'Mila loveseat',c:'Living room',p:'Rs. 52,000',i:'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=80&q=60'},
+  {n:'Luma bed frame',c:'Bedroom',p:'Rs. 54,500',i:'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=80&q=60'},
+  {n:'Drift wardrobe',c:'Bedroom',p:'Rs. 92,000',i:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=80&q=60'},
+  {n:'Arc nightstand',c:'Bedroom',p:'Rs. 10,150',i:'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=80&q=60'},
+  {n:'Yuki dresser',c:'Bedroom',p:'Rs. 48,000',i:'https://images.unsplash.com/photo-1489187514013-7f20a0f24d75?w=80&q=60'},
+  {n:'Nori dining table',c:'Dining',p:'Rs. 68,000',i:'https://images.unsplash.com/photo-1617806118233-18e1de247200?w=80&q=60'},
+  {n:'Kiso dining chair',c:'Dining',p:'Rs. 12,500',i:'https://images.unsplash.com/photo-1581539250439-c96689b516dd?w=80&q=60'},
+  {n:'Mori 6-seat set',c:'Dining',p:'Rs. 1,15,000',i:'https://images.unsplash.com/photo-1617806118233-18e1de247200?w=80&q=60'},
+  {n:'Alto bar stool',c:'Dining',p:'Rs. 9,200',i:'https://images.unsplash.com/photo-1503602642458-232111445657?w=80&q=60'},
+  {n:'Drift floor lamp',c:'Lighting',p:'Rs. 14,500',i:'https://images.unsplash.com/photo-1513506003901-1e6a35a47413?w=80&q=60'},
+  {n:'Rattan pendant',c:'Lighting',p:'Rs. 8,500',i:'https://images.unsplash.com/photo-1513506003901-1e6a35a47413?w=80&q=60'},
+  {n:'Brass table lamp',c:'Lighting',p:'Rs. 6,200',i:'https://images.unsplash.com/photo-1513506003901-1e6a35a47413?w=80&q=60'},
+  {n:'Sputnik chandelier',c:'Lighting',p:'Rs. 38,000',i:'https://images.unsplash.com/photo-1513506003901-1e6a35a47413?w=80&q=60'},
+  {n:'Petra bookshelf',c:'Storage',p:'Rs. 32,000',i:'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=60'},
+  {n:'Cane cabinet 2-door',c:'Storage',p:'Rs. 42,000',i:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=80&q=60'},
+  {n:'Kura storage chest',c:'Storage',p:'Rs. 22,000',i:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=80&q=60'},
+  {n:'Bali lounge set',c:'Outdoor',p:'Rs. 1,45,000',i:'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=80&q=60'},
+  {n:'Teak swing chair',c:'Outdoor',p:'Rs. 38,000',i:'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=80&q=60'},
+];
+
+function openSearch(){
+  document.getElementById('srch-overlay').classList.add('open');
+  setTimeout(function(){document.getElementById('srch-input').focus();},80);
+}
+function closeSearch(){
+  document.getElementById('srch-overlay').classList.remove('open');
+  document.getElementById('srch-input').value='';
+  document.getElementById('srch-results').innerHTML='';
+}
+function quickSearch(q){
+  document.getElementById('srch-input').value=q;
+  runSearch(q);
+}
+document.addEventListener('DOMContentLoaded',function(){
+  var inp=document.getElementById('srch-input');
+  if(inp)inp.addEventListener('input',function(){runSearch(this.value);});
+  document.getElementById('srch-overlay').addEventListener('click',function(e){
+    if(e.target===this)closeSearch();
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){closeSearch();closeGlassPopup();}
+  });
+});
+function runSearch(q){
+  var res=document.getElementById('srch-results');
+  if(!q||q.length<2){res.innerHTML='';return;}
+  var ql=q.toLowerCase();
+  var hits=srchProducts.filter(function(p){
+    return p.n.toLowerCase().indexOf(ql)!==-1||p.c.toLowerCase().indexOf(ql)!==-1;
+  });
+  if(!hits.length){res.innerHTML='<div class="srch-empty">No results — try a different search</div>';return;}
+  var html='';
+  for(var i=0;i<Math.min(hits.length,8);i++){
+    var p=hits[i];
+    var pg=pageCat(p.c);
+    html+='<div class="srch-item" onclick="closeSearch();go(\'' + pg + '\')">';
+    html+='<div class="srch-img" style="display:flex;align-items:center;justify-content:center;background:var(--warm)"><i class="ti ti-armchair" style="font-size:20px;color:var(--stone)"></i></div>';
+    html+='<div><div class="srch-name">'+p.n+'</div><div class="srch-cat">'+p.c+'</div></div>';
+    html+='<div class="srch-price">'+p.p+'</div></div>';
+  }
+  res.innerHTML=html;
+}
+function pageCat(c){
+  var m={'Living room':'living','Bedroom':'bedroom','Dining':'dining','Lighting':'lighting','Storage':'storage','Outdoor':'outdoor'};
+  return m[c]||'home';
+}
+
+// ── GLASS NAV ──
+var glassPages=['living','bedroom','outdoor','dining','lighting','storage','product','custom'];
+
+
+function toggleGlassPopup(){
+  document.getElementById('glass-popup').classList.toggle('open');
+}
+function closeGlassPopup(){
+  var p=document.getElementById('glass-popup');
+  if(p)p.classList.remove('open');
+}
+document.addEventListener('click',function(e){
+  var gn=document.getElementById('glass-nav');
+  if(gn&&!gn.contains(e.target))closeGlassPopup();
+});
+
+</script>
+</body>
+</html>
