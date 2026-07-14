@@ -828,24 +828,7 @@ body{font-family:var(--font-sans);background:var(--cream);color:var(--text);font
   <!-- FEATURED PRODUCTS -->
   <div class="prod-section">
     <div class="section-row reveal"><div class="section-h">Featured pieces</div><div class="section-link" onclick="go('living')">View all →</div></div>
-    <div class="pgrid4">
-      <div class="pcard" data-cat="Sofas" data-mat="Upholstered" onclick="prod('Oslo 3-seater sofa','Living room','Rs. 85,000','Rs. 1,00,000','Kiln-dried sheesham frame, Belgian linen upholstery, HR foam + fibre wrap cushions. 220×90×80 cm.','')">
-        <div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-new">New</div><div class="pwish" onclick="event.stopPropagation();saveItem('Oslo 3-seater sofa','Living room','Rs. 85,000','Rs. 1,00,000','Kiln-dried sheesham.','')"><i class="ti ti-heart" aria-hidden="true"></i></div></div>
-        <div class="pinfo"><div class="pname">Oslo 3-seater sofa</div><div class="pcat">Living room</div><div class="pprice-row"><div class="pprice">Rs. 85,000</div><div class="pprice-old">Rs. 1,00,000</div></div></div>
-      </div>
-      <div class="pcard" data-cat="Dining Tables" data-mat="Solid wood" onclick="prod('Nori dining table','Dining','Rs. 32,000','','Sheesham 6-seater, 180cm. Handcrafted by our artisans in solid sheesham.','')">
-        <div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pwish" onclick="event.stopPropagation();saveItem('Nori dining table','Dining','Rs. 32,000','','Sheesham 6-seater dining table.','')"><i class="ti ti-heart" aria-hidden="true"></i></div></div>
-        <div class="pinfo"><div class="pname">Nori dining table</div><div class="pcat">Dining</div><div class="pprice-row"><div class="pprice">Rs. 32,000</div></div></div>
-      </div>
-      <div class="pcard" data-cat="Beds" data-mat="Solid wood" onclick="prod('Luma bed frame','Bedroom','Rs. 54,500','Rs. 68,000','Solid sheesham headboard, slatted base. Queen & king sizes. White glove delivery included.','')">
-        <div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pbadge pbadge-sale">−20%</div><div class="pwish" onclick="event.stopPropagation();saveItem('Luma bed frame','Bedroom','Rs. 54,500','Rs. 68,000','Sheesham headboard.','')"><i class="ti ti-heart" aria-hidden="true"></i></div></div>
-        <div class="pinfo"><div class="pname">Luma bed frame</div><div class="pcat">Bedroom</div><div class="pprice-row"><div class="pprice">Rs. 54,500</div><div class="pprice-old">Rs. 68,000</div></div></div>
-      </div>
-      <div class="pcard" data-cat="Armchairs" data-mat="Cane &amp; rattan" onclick="prod('Cane armchair','Living room','Rs. 28,000','','Hand-woven cane back, solid oak legs, removable linen cushion. 72×68×82 cm.','')">
-        <div class="pthumb"><div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div><div class="pwish" onclick="event.stopPropagation();saveItem('Cane armchair','Living room','Rs. 28,000','','Hand-woven cane.','')"><i class="ti ti-heart" aria-hidden="true"></i></div></div>
-        <div class="pinfo"><div class="pname">Cane armchair</div><div class="pcat">Living room</div><div class="pprice-row"><div class="pprice">Rs. 28,000</div></div></div>
-      </div>
-    </div>
+    <div class="pgrid4" id="grid-featured"></div>
 
     <!-- SHOP BY ROOM -->
     <div class="section-row reveal" style="margin-top:12px"><div class="section-h">Shop by room</div></div>
@@ -1068,12 +1051,27 @@ body{font-family:var(--font-sans);background:var(--cream);color:var(--text);font
   <div class="back-row" id="prod-back-btn"><i class="ti ti-arrow-left" style="font-size:12px"></i> <span id="prod-back-label">Back</span></div>
   <div class="detail-wrap">
     <div class="gallery-side">
-      <div class="main-img" id="prod-main-img" style="display:flex;align-items:center;justify-content:center;background:var(--warm)"><i id="prod-main-icon" class="ti ti-armchair" style="font-size:100px;color:var(--stone)"></i></div>
+      <div class="main-img" id="prod-main-img" style="display:flex;align-items:center;justify-content:center;background:var(--warm)">
+        <img id="prod-main-photo" src="" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:none">
+        <i id="prod-main-icon" class="ti ti-armchair" style="font-size:100px;color:var(--stone)"></i>
+      </div>
       <div class="thumbrow">
-        <div class="dthumb sel" onclick="selThumb(this,0)" style="display:flex;align-items:center;justify-content:center;background:var(--warm)"><i class="ti ti-armchair" style="font-size:22px;color:var(--stone)"></i></div>
-        <div class="dthumb" onclick="selThumb(this,1)"><i class="ti ti-armchair" style="font-size:22px;color:var(--stone)"></i></div>
-        <div class="dthumb" onclick="selThumb(this,2)"><i class="ti ti-armchair" style="font-size:22px;color:var(--stone)"></i></div>
-        <div class="dthumb" onclick="selThumb(this,3)"><i class="ti ti-armchair" style="font-size:22px;color:var(--stone)"></i></div>
+        <div class="dthumb sel" onclick="selThumb(this,0)" style="display:flex;align-items:center;justify-content:center;background:var(--warm)">
+          <img id="dthumb0" src="" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:none">
+          <i class="ti ti-armchair" style="font-size:22px;color:var(--stone)"></i>
+        </div>
+        <div class="dthumb" onclick="selThumb(this,1)">
+          <img id="dthumb1" src="" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:none">
+          <i class="ti ti-armchair" style="font-size:22px;color:var(--stone)"></i>
+        </div>
+        <div class="dthumb" onclick="selThumb(this,2)">
+          <img id="dthumb2" src="" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:none">
+          <i class="ti ti-armchair" style="font-size:22px;color:var(--stone)"></i>
+        </div>
+        <div class="dthumb" onclick="selThumb(this,3)">
+          <img id="dthumb3" src="" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:none">
+          <i class="ti ti-armchair" style="font-size:22px;color:var(--stone)"></i>
+        </div>
       </div>
     </div>
     <div class="info-side">
@@ -1893,44 +1891,124 @@ var PRODUCTS=[
 ];
 
 var COLL_LABEL={living:'Living room',bedroom:'Bedroom',dining:'Dining',lighting:'Lighting',storage:'Storage',outdoor:'Outdoor'};
-var CAT_IMG={
-  'living|Sofas':'',
-  'living|Armchairs':'',
-  'living|Coffee tables':'',
-  'living|TV units':'',
-  'living|Shelving':'',
-  'bedroom|Beds':'',
-  'bedroom|Wardrobes':'',
-  'bedroom|Nightstands':'',
-  'bedroom|Dressers':'',
-  'bedroom|Benches':'',
-  'dining|Dining Tables':'',
-  'dining|Dining Chairs':'',
-  'dining|Dining Sets':'',
-  'dining|Buffets':'',
-  'dining|Bar Stools':'',
-  'lighting|Floor Lamps':'',
-  'lighting|Pendant Lights':'',
-  'lighting|Table Lamps':'',
-  'lighting|Wall Sconces':'',
-  'lighting|Chandeliers':'',
-  'storage|Wardrobes':'',
-  'storage|Bookshelves':'',
-  'storage|Cabinets':'',
-  'storage|TV Units':'',
-  'storage|Chests':'',
-  'outdoor|Lounge Sets':'',
-  'outdoor|Dining Sets':'',
-  'outdoor|Chairs':'',
-  'outdoor|Planters':''
+
+// ══════════════════════════════════════════════════════════════════
+// AUTOMATIC IMAGE SYSTEM
+// Every product's images live at:  images/CATEGORY-FOLDER/product-name-slug/1.jpg (2/3/4.jpg)
+// Nothing here is written by hand per-product — everything is derived
+// from the product's name (p.n) and category (p.cat) at runtime.
+// ══════════════════════════════════════════════════════════════════
+
+// Explicit category → folder-name map. Anything not listed here falls
+// back to an automatic UPPERCASE-WITH-DASHES conversion (see categoryFolder()).
+var CATEGORY_FOLDER_MAP={
+  'Sofas':'SOFAS',
+  'Armchairs':'ARMCHAIRS',
+  'Coffee tables':'COFFEE-TABLES',
+  'TV units':'TV-UNITS',
+  'TV Units':'TV-UNITS',
+  'Shelving':'SHELVING',
+  'Beds':'BEDS',
+  'Wardrobes':'WARDROBES',
+  'Nightstands':'NIGHTSTANDS',
+  'Dressers':'DRESSERS',
+  'Benches':'BENCHES',
+  'Dining Tables':'DINING-TABLES',
+  'Dining Chairs':'DINING-CHAIRS',
+  'Dining Sets':'DINING-SETS',
+  'Buffets':'BUFFETS',
+  'Bar Stools':'BAR-STOOLS',
+  'Floor Lamps':'FLOOR-LAMPS',
+  'Pendant Lights':'PENDANT-LIGHTS',
+  'Table Lamps':'TABLE-LAMPS',
+  'Wall Sconces':'WALL-SCONCES',
+  'Chandeliers':'CHANDELIERS',
+  'Bookshelves':'BOOKSHELVES',
+  'Cabinets':'CABINETS',
+  'Chests':'CHESTS',
+  'Lounge Sets':'LOUNGE-SETS',
+  'Chairs':'CHAIRS',
+  'Planters':'PLANTERS'
 };
-function imgFor(p){return CAT_IMG[p.coll+'|'+p.cat]||'';}
+
+// Turns a category name into its folder name. Falls back to an automatic
+// uppercase/dash conversion for any category not in the map above, so
+// brand-new categories work immediately with zero configuration.
+function categoryFolder(cat){
+  if(CATEGORY_FOLDER_MAP[cat])return CATEGORY_FOLDER_MAP[cat];
+  return String(cat||'')
+    .trim()
+    .replace(/&/g,'and')
+    .toUpperCase()
+    .replace(/[^A-Z0-9]+/g,'-')
+    .replace(/^-+|-+$/g,'');
+}
+
+// Turns a product name into a URL/folder-safe slug.
+// "Alto Lounge Chair" → "alto-lounge-chair"
+// "Modern & Oak Chair" → "modern-and-oak-chair"
+function slugify(name){
+  return String(name||'')
+    .trim()
+    .toLowerCase()
+    .replace(/&/g,'and')
+    .replace(/[^a-z0-9]+/g,'-')
+    .replace(/^-+|-+$/g,'');
+}
+
+// Cache of computed folder paths so repeated calls for the same product
+// (grid render, search, wishlist, cart) don't redo the string work.
+var _productFolderCache={};
+function productFolder(p){
+  var key=p.cat+'|'+p.n;
+  var cached=_productFolderCache[key];
+  if(cached)return cached;
+  var folder='images/'+categoryFolder(p.cat)+'/'+slugify(p.n)+'/';
+  _productFolderCache[key]=folder;
+  return folder;
+}
+
+// Thumbnail used on every product card — always 1.jpg, always automatic.
+function productThumb(p){return productFolder(p)+'1.jpg';}
+
+// Full 4-image gallery for the product detail page.
+function productGallery(p){
+  var f=productFolder(p);
+  return [f+'1.jpg',f+'2.jpg',f+'3.jpg',f+'4.jpg'];
+}
+
+// Fast name → product lookup, built once, used so any part of the UI that
+// only has a product's name (search results, cart, wishlist, browser
+// back/forward state) can still resolve the *real* category and regenerate
+// correct image paths, instead of ever needing a stored image path.
+var PRODUCTS_BY_NAME={};
+PRODUCTS.forEach(function(p){PRODUCTS_BY_NAME[p.n]=p;});
 
 function jsesc(s){return (s||'').replace(/\\/g,'\\\\').replace(/'/g,"\\'");}
 
+// Icon placeholder shown whenever no image is available at all.
+function pthumbFallbackHTML(size){
+  size=size||40;
+  return '<div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:'+size+'px;color:var(--stone)"></i></div>';
+}
+
+// Renders an <img> for a raw src string, with a built-in fallback:
+// if the image 404s, it swaps itself for the icon placeholder so a
+// broken image can never appear on screen.
+function imgOrIconHTML(src,size){
+  size=size||40;
+  if(!src)return pthumbFallbackHTML(size);
+  var fb=pthumbFallbackHTML(size);
+  return '<img src="'+src+'" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:inherit" onerror="this.onerror=null;this.parentElement.innerHTML=\''+fb+'\'">';
+}
+
+// Renders a product card's thumbnail image (auto 1.jpg) with fallback.
+function thumbImgHTML(p,size){
+  return imgOrIconHTML(productThumb(p),size);
+}
+
 function pcardHTML(p){
-  var img=imgFor(p);
-  var thumb=img?'<img src="'+img+'" style="width:100%;height:100%;object-fit:cover;border-radius:inherit">':'<div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div>';
+  var thumb=thumbImgHTML(p,40);
   var badge='';
   if(p.o){
     var priceNum=parseInt(p.p.replace(/\D/g,''));
@@ -1939,7 +2017,7 @@ function pcardHTML(p){
     badge='<div class="pbadge pbadge-sale">\u2212'+pct+'%</div>';
   }
   var collLabel=COLL_LABEL[p.coll]||p.coll;
-  var args="'"+jsesc(p.n)+"','"+collLabel+"','"+p.p+"','"+(p.o||'')+"','"+jsesc(p.d)+"','"+img+"'";
+  var args="'"+jsesc(p.n)+"','"+collLabel+"','"+p.p+"','"+(p.o||'')+"','"+jsesc(p.d)+"','"+productThumb(p)+"'";
   return '<div class="pcard" data-cat="'+p.cat+'" data-mat="'+p.mat+'" onclick="prod('+args+')">'
     +'<div class="pthumb">'+thumb+badge+'</div>'
     +'<div class="pinfo"><div class="pname">'+p.n+'</div><div class="pcat">'+collLabel+'</div>'
@@ -1952,6 +2030,41 @@ function renderGrid(collId){
   if(!grid)return;
   var items=PRODUCTS.filter(function(p){return p.coll===collId;});
   grid.innerHTML=items.map(pcardHTML).join('');
+}
+
+// Homepage "Featured pieces" — same automatic image system as every other
+// grid. Badge shown per product: 'new' for a "New" ribbon, otherwise the
+// normal sale badge (from pcardHTML) is used automatically when p.o is set.
+var FEATURED_PRODUCTS=[
+  {name:'Oslo 3-seater sofa',badge:'new'},
+  {name:'Nori dining table'},
+  {name:'Luma bed frame'},
+  {name:'Cane armchair'}
+];
+function featuredCardHTML(entry){
+  var p=PRODUCTS_BY_NAME[entry.name];
+  if(!p)return '';
+  var thumb=thumbImgHTML(p,40);
+  var collLabel=COLL_LABEL[p.coll]||p.coll;
+  var saleBadge='';
+  if(p.o){
+    var priceNum=parseInt(p.p.replace(/\D/g,''));
+    var oldNum=parseInt(p.o.replace(/\D/g,''));
+    var pct=Math.round((1-priceNum/oldNum)*100);
+    saleBadge='<div class="pbadge pbadge-sale">\u2212'+pct+'%</div>';
+  }
+  var newBadge=entry.badge==='new'?'<div class="pbadge pbadge-new">New</div>':'';
+  var args="'"+jsesc(p.n)+"','"+collLabel+"','"+p.p+"','"+(p.o||'')+"','"+jsesc(p.d)+"','"+productThumb(p)+"'";
+  return '<div class="pcard" data-cat="'+p.cat+'" data-mat="'+p.mat+'" onclick="prod('+args+')">'
+    +'<div class="pthumb">'+thumb+newBadge+saleBadge+'<div class="pwish" onclick="event.stopPropagation();saveItem('+args+')"><i class="ti ti-heart" aria-hidden="true"></i></div></div>'
+    +'<div class="pinfo"><div class="pname">'+p.n+'</div><div class="pcat">'+collLabel+'</div>'
+    +'<div class="pprice-row"><div class="pprice">'+p.p+'</div>'+(p.o?'<div class="pprice-old">'+p.o+'</div>':'')+'</div></div>'
+  +'</div>';
+}
+function renderFeatured(){
+  var grid=document.getElementById('grid-featured');
+  if(!grid)return;
+  grid.innerHTML=FEATURED_PRODUCTS.map(featuredCardHTML).join('');
 }
 
 function renderSaleGrid(){
@@ -2059,11 +2172,45 @@ window.addEventListener('popstate',function(e){
 
 // THUMB GALLERY
 var thumbImgs=[];
+
+// Binds a gallery <img> to a src, with the required fallback chain:
+// if `src` (e.g. 2.jpg) 404s, retry with `fallbackSrc` (always 1.jpg);
+// if that also 404s, hide the image and reveal the icon placeholder
+// next to it — a broken image is never shown.
+function bindGalleryImg(imgEl,iconEl,src,fallbackSrc){
+  if(!imgEl)return;
+  if(!src){
+    imgEl.style.display='none';
+    if(iconEl)iconEl.style.display='';
+    return;
+  }
+  imgEl.onerror=function(){
+    if(fallbackSrc&&src!==fallbackSrc){
+      imgEl.onerror=function(){
+        imgEl.onerror=null;
+        imgEl.style.display='none';
+        if(iconEl)iconEl.style.display='';
+      };
+      imgEl.src=fallbackSrc;
+    } else {
+      imgEl.onerror=null;
+      imgEl.style.display='none';
+      if(iconEl)iconEl.style.display='';
+    }
+  };
+  imgEl.onload=function(){
+    imgEl.style.display='block';
+    if(iconEl)iconEl.style.display='none';
+  };
+  imgEl.src=src;
+}
+
 function selThumb(el,idx){
   document.querySelectorAll('.dthumb').forEach(function(d){d.classList.remove('sel')});
   el.classList.add('sel');
   var main=document.getElementById('prod-main-photo');
-  if(main&&thumbImgs[idx])main.src=thumbImgs[idx];
+  var mainIcon=document.getElementById('prod-main-icon');
+  if(main&&thumbImgs[idx])bindGalleryImg(main,mainIcon,thumbImgs[idx],thumbImgs[0]);
 }
 function selSz(el){
   document.querySelectorAll('.sz').forEach(function(s){s.classList.remove('sel')});
@@ -2071,7 +2218,16 @@ function selSz(el){
 }
 
 function prod(name,cat,price,old,desc,imgUrl,skipPush){
-  prev=(cur==='product')?prev:cur; curProd={name:name,cat:cat,price:price,old:old,desc:desc,img:imgUrl||''};
+  prev=(cur==='product')?prev:cur;
+
+  // Resolve the real product record (with its true sub-category) so the
+  // image gallery is generated automatically from name+category, never
+  // from a manually-passed image path. Falls back to the passed cat/name
+  // if the product can't be found (should not normally happen).
+  var srcProduct=PRODUCTS_BY_NAME[name]||{n:name,cat:cat};
+  var gallery=productGallery(srcProduct);
+
+  curProd={name:name,cat:cat,price:price,old:old,desc:desc,img:gallery[0]};
 
   // Set text
   document.getElementById('prod-name').textContent=name;
@@ -2087,14 +2243,15 @@ function prod(name,cat,price,old,desc,imgUrl,skipPush){
   document.getElementById('prod-back-btn').onclick=function(){go(prev)};
   document.getElementById('prod-wish').innerHTML='<i class="ti ti-heart" aria-hidden="true"></i>';
 
-  // Set images
-  var imgArr=[imgUrl,imgUrl,imgUrl,imgUrl];
-  thumbImgs=imgArr;
+  // Set images — gallery[0..3] map to 1.jpg..4.jpg, auto-generated above.
+  thumbImgs=gallery;
   var mainPhoto=document.getElementById('prod-main-photo');
-  if(mainPhoto&&imgUrl)mainPhoto.src=imgUrl;
+  var mainIcon=document.getElementById('prod-main-icon');
+  bindGalleryImg(mainPhoto,mainIcon,gallery[0],gallery[0]);
   ['dthumb0','dthumb1','dthumb2','dthumb3'].forEach(function(id,i){
     var el=document.getElementById(id);
-    if(el&&imgArr[i])el.src=imgArr[i];
+    var iconEl=el&&el.parentElement?el.parentElement.querySelector('i'):null;
+    bindGalleryImg(el,iconEl,gallery[i],gallery[0]);
   });
   document.querySelectorAll('.dthumb').forEach(function(d,i){d.classList.toggle('sel',i===0)});
 
@@ -2142,7 +2299,7 @@ function updateColl(){
   document.getElementById('coll-empty').style.display=n===0?'block':'none';
   var g=document.getElementById('coll-grid');g.style.display=n===0?'none':'grid';
   g.innerHTML=coll.map(function(p){
-    var iconHtml=p.img?'<img src="'+p.img+'" style="width:100%;height:100%;object-fit:cover;border-radius:inherit">':'<div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div>';
+    var iconHtml=imgOrIconHTML(p.img,40);
     return'<div class="pcard" onclick="prod(\''+jsesc(p.name)+'\',\''+p.cat+'\',\''+p.price+'\',\''+(p.old||'')+'\',\''+jsesc(p.desc||'')+'\',\''+(p.img||'')+'\')">'
     +'<div class="pthumb">'+iconHtml+'</div>'
     +'<div class="pinfo"><div class="pname">'+p.name+'</div><div class="pcat">'+p.cat+'</div>'
@@ -2169,7 +2326,7 @@ function renderBrowseAll(){
   if(!grid)return;
   grid.innerHTML=srchProducts.map(function(p){
     var saved=coll.some(function(c){return c.name===p.n;});
-    var thumb=p.img?'<img src="'+p.img+'" style="width:100%;height:100%;object-fit:cover;border-radius:inherit">':'<div class="pthumb-inner"><i class="ti ti-armchair" style="font-size:40px;color:var(--stone)"></i></div>';
+    var thumb=imgOrIconHTML(p.img,40);
     var openArgs="'"+jsesc(p.n)+"','"+p.c+"','"+p.p+"','"+(p.o||'')+"','"+jsesc(p.d||'')+"','"+(p.img||'')+"'";
     return '<div class="pcard" style="position:relative">'
       +'<div class="pthumb" onclick="prod('+openArgs+')">'+thumb+'</div>'
@@ -2270,7 +2427,7 @@ function renderCart(){
     var lineTotal=priceToNum(c.price)*c.qty;
     return '<div style="display:flex;gap:14px;align-items:center;padding:12px 0;border-bottom:0.5px solid var(--border)">'
       +'<div style="width:64px;height:64px;border-radius:8px;background:var(--stone-light,#EDE8DE);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden">'
-      +(c.img?'<img src="'+c.img+'" style="width:100%;height:100%;object-fit:cover">':'<i class="ti ti-armchair" style="font-size:26px;color:var(--stone)"></i>')
+      +imgOrIconHTML(c.img,26)
       +'</div>'
       +'<div style="flex:1;min-width:0">'
         +'<div style="font-size:13px;font-weight:500;cursor:pointer" onclick="prod(\''+c.name.replace(/'/g,"\\'")+'\',\''+c.cat+'\',\''+c.price+'\',\''+(c.old||'')+'\',\''+(c.desc||'').replace(/'/g,"\\'")+'\',\''+(c.img||'')+'\')">'+c.name+'</div>'
@@ -2438,6 +2595,7 @@ document.addEventListener('DOMContentLoaded',function(){
   try{history.replaceState({page:initPage},'','#'+initPage);}catch(e){}
   if(initPage!=='home'){go(initPage,true,true);}
 
+  renderFeatured();
   updateCartBadge();
   initScrollReveal();
 });
@@ -2532,7 +2690,7 @@ document.addEventListener('click',function(e){
 
 // ── SEARCH ──
 var srchProducts=PRODUCTS.map(function(p){
-  return {n:p.n,c:COLL_LABEL[p.coll]||p.coll,p:p.p,o:p.o,d:p.d,img:imgFor(p)};
+  return {n:p.n,c:COLL_LABEL[p.coll]||p.coll,p:p.p,o:p.o,d:p.d,img:productThumb(p)};
 });
 
 function openSearch(){
@@ -2624,7 +2782,7 @@ function runSearch(q){
     var args="'"+p.n.replace(/'/g,"\\'")+"','"+p.c+"','"+p.p+"','"+(p.o||'')+"','"+(p.d||'').replace(/'/g,"\\'")+"','"+(p.img||'')+"'";
     html+='<div class="srch-item" data-idx="'+i+'" onclick="closeSearchUI();prod('+args+')">';
     html+='<div class="srch-img" style="display:flex;align-items:center;justify-content:center;background:var(--warm);overflow:hidden">';
-    html+='<i class="ti ti-armchair" style="font-size:20px;color:var(--stone)"></i>';
+    html+=imgOrIconHTML(p.img,20);
     html+='</div>';
     html+='<div><div class="srch-name">'+highlightMatch(p.n,terms)+'</div><div class="srch-cat">'+p.c+'</div></div>';
     html+='<div class="srch-price">'+p.p+'</div></div>';
