@@ -1893,38 +1893,17 @@ var PRODUCTS=[
 ];
 
 var COLL_LABEL={living:'Living room',bedroom:'Bedroom',dining:'Dining',lighting:'Lighting',storage:'Storage',outdoor:'Outdoor'};
-var CAT_IMG={
-  'living|Sofas':'',
-  'living|Armchairs':'',
-  'living|Coffee tables':'',
-  'living|TV units':'',
-  'living|Shelving':'',
-  'bedroom|Beds':'',
-  'bedroom|Wardrobes':'',
-  'bedroom|Nightstands':'',
-  'bedroom|Dressers':'',
-  'bedroom|Benches':'',
-  'dining|Dining Tables':'',
-  'dining|Dining Chairs':'',
-  'dining|Dining Sets':'',
-  'dining|Buffets':'',
-  'dining|Bar Stools':'',
-  'lighting|Floor Lamps':'',
-  'lighting|Pendant Lights':'',
-  'lighting|Table Lamps':'',
-  'lighting|Wall Sconces':'',
-  'lighting|Chandeliers':'',
-  'storage|Wardrobes':'',
-  'storage|Bookshelves':'',
-  'storage|Cabinets':'',
-  'storage|TV Units':'',
-  'storage|Chests':'',
-  'outdoor|Lounge Sets':'',
-  'outdoor|Dining Sets':'',
-  'outdoor|Chairs':'',
-  'outdoor|Planters':''
-};
-function imgFor(p){return CAT_IMG[p.coll+'|'+p.cat]||'';}
+
+// ── AUTOMATIC IMAGE PATH BUILDER ──
+// Folder rule: images/[collection]/[Category-With-Hyphens]/[Product-Name-With-Hyphens]/main.jpg
+// Example: "Alto lounge chair" in living > Armchairs ->
+//          images/living/Armchairs/Alto-lounge-chair/main.jpg
+// Just make sure your folders on disk match this pattern exactly (case-sensitive!).
+function imgFor(p){
+  var catFolder=p.cat.replace(/\s+/g,'-');
+  var nameFolder=p.n.replace(/\s+/g,'-');
+  return 'images/'+p.coll+'/'+catFolder+'/'+nameFolder+'/main.jpg';
+}
 
 function jsesc(s){return (s||'').replace(/\\/g,'\\\\').replace(/'/g,"\\'");}
 
